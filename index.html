@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JHF Blocks — EduTec JHF</title>
   <style>
-    /* Variables de la paleta de JHF Blocks */
+    /* Variables de la paleta oficial EduTec JHF */
     :root {
       --superficie: #FFFFFF;
       --superficie-2: #F1F6F2;
@@ -27,7 +27,7 @@
     }
 
     body {
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--lienzo);
       color: var(--texto);
       line-height: 1.6;
@@ -41,40 +41,54 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .marca {
+    .marca-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      font-size: 1.4rem;
+      gap: 10px;
     }
 
-    .marca-jhf { color: var(--verde); }
-    .marca-blocks { color: var(--texto); }
-    .marca-badge {
+    .logo-header {
+      width: 42px;
+      height: 42px;
+    }
+
+    .nombre-app {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--marca-azul);
+    }
+
+    .nombre-app span {
+      color: var(--marca-naranja);
+    }
+
+    .badge-edutec {
       font-size: 0.75rem;
       background: var(--superficie-2);
       color: var(--texto-suave);
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
       border: 1px solid var(--linea);
+      font-weight: 600;
     }
 
-    /* Hero / Principal */
+    /* Hero */
     .hero {
-      max-width: 1000px;
-      margin: 3rem auto;
+      max-width: 1100px;
+      margin: 2.5rem auto;
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 2.5rem;
       align-items: center;
     }
 
     .hero-titulo {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       line-height: 1.2;
       margin-bottom: 1rem;
       color: var(--texto);
@@ -86,41 +100,87 @@
 
     .hero-bajada {
       color: var(--texto-suave);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
     }
 
-    .acciones-descarga {
+    /* Seccion de Descargas con Botones */
+    .panel-descargas {
+      background: var(--superficie);
+      border: 1px solid var(--linea);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .titulo-descargas {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--texto);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .grid-botones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .btn-descarga {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-    }
-
-    .btn-principal {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background-color: var(--verde);
-      color: var(--superficie);
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 1rem 2rem;
-      border-radius: 8px;
+      padding: 0.75rem 0.5rem;
+      border-radius: 6px;
       text-decoration: none;
-      transition: background-color 0.2s;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      text-align: center;
     }
 
-    .btn-principal:hover {
-      background-color: #0c6b31;
+    .btn-win64 {
+      background-color: var(--verde);
+      color: white;
+    }
+    .btn-win64:hover { background-color: #0d7033; }
+
+    .btn-win32 {
+      background-color: var(--superficie-2);
+      color: var(--texto);
+      border-color: var(--linea);
+    }
+    .btn-win32:hover { background-color: var(--linea); }
+
+    .btn-mac {
+      background-color: var(--marca-azul);
+      color: white;
+    }
+    .btn-mac:hover { background-color: #153c70; }
+
+    .btn-movil {
+      background-color: var(--marca-naranja);
+      color: white;
+    }
+    .btn-movil:hover { background-color: #d66f15; }
+
+    .btn-descarga .subtexto {
+      font-size: 0.7rem;
+      opacity: 0.85;
+      font-weight: 400;
+      margin-top: 2px;
     }
 
     .info-offline {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--texto-suave);
+      margin-top: 1rem;
     }
 
     .punto-verde {
@@ -128,49 +188,67 @@
       height: 8px;
       background-color: var(--fluor);
       border-radius: 50%;
-      display: inline-block;
     }
 
-    /* Vista previa / Tarjeta Robot */
-    .tarjeta-preview {
+    /* Tarjeta del Logo EduTec */
+    .tarjeta-logo {
       background: var(--superficie);
       border: 2px solid var(--linea);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
-    /* SVG del Robot Mascota incorporado */
-    .robot-svg {
-      width: 180px;
-      height: 140px;
+    .logo-oficial-svg {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
     }
 
-    .robot-svg .cabeza, .robot-svg .auricular { fill: var(--marca-naranja); stroke: var(--texto); stroke-width: 2; }
-    .robot-svg .pantalla, .robot-svg .birrete-base, .robot-svg .birrete-tabla { fill: var(--marca-azul); stroke: var(--texto); stroke-width: 2; }
-    .robot-svg .birrete-cordon { fill: none; stroke: var(--rojo); stroke-width: 1.8; }
-    .robot-svg .borla { fill: var(--rojo); stroke: var(--texto); stroke-width: 1.2; }
-    .robot-svg .cuerpo, .robot-svg .brazo { fill: var(--superficie-2); stroke: var(--texto); stroke-width: 2; }
-    .robot-svg .pecho-panel { fill: var(--marca-naranja); stroke: var(--texto); stroke-width: 1.5; }
-    .robot-svg .pecho-detalle { fill: var(--fluor); }
-    .robot-svg .oruga-base { fill: var(--texto); }
-    .robot-svg .oruga-centro { fill: var(--marca-naranja); }
-    .robot-svg .ojo-feliz { fill: none; stroke: var(--fluor); stroke-width: 2.5; stroke-linecap: round; }
-    .robot-svg .sonrisa { fill: none; stroke: var(--fluor); stroke-width: 2.5; stroke-linecap: round; }
+    /* Historia */
+    .seccion-historia {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
 
-    /* Seccion de Caracteristicas */
+    .caja-historia {
+      background: var(--superficie);
+      border: 1px solid var(--linea);
+      border-left: 5px solid var(--marca-naranja);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .caja-historia h2 {
+      color: var(--marca-azul);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .caja-historia p {
+      color: var(--texto);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .caja-historia p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Caracteristicas */
     .caracteristicas {
-      max-width: 1000px;
-      margin: 4rem auto;
+      max-width: 1100px;
+      margin: 3rem auto 4rem;
       padding: 0 1.5rem;
     }
 
     .grid-caracteristicas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .item-caracteristica {
@@ -196,103 +274,209 @@
       background-color: var(--superficie);
       border-top: 1px solid var(--linea);
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       color: var(--texto-suave);
       font-size: 0.9rem;
-      margin-top: 4rem;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    /* Adaptaciones para Movil */
+    @media (max-width: 850px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
       }
-      .acciones-descarga {
-        align-items: center;
+      .panel-descargas {
+        text-align: left;
+      }
+      .hero-titulo {
+        font-size: 2rem;
+      }
+      .info-offline {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- ENCABEZADO -->
   <header>
-    <div class="marca">
-      <span class="marca-jhf">JHF</span><span class="marca-blocks">Blocks</span>
-      <span class="marca-badge">EduTec JHF</span>
+    <div class="marca-header">
+      <!-- Icono simplificado para header -->
+      <svg class="logo-header" viewBox="0 0 100 100">
+        <rect x="20" y="25" width="60" height="42" rx="12" fill="#F58220" stroke="#1D4E8F" stroke-width="4"/>
+        <rect x="28" y="32" width="44" height="28" rx="6" fill="#1D4E8F"/>
+        <ellipse cx="42" cy="46" rx="4" ry="6" fill="#39FF14"/>
+        <ellipse cx="58" cy="46" rx="4" ry="6" fill="#39FF14"/>
+        <polygon points="15,22 50,12 85,22 50,30" fill="#1D4E8F" stroke="#16261C" stroke-width="3"/>
+      </svg>
+      <div class="nombre-app">JHF <span>Blocks</span></div>
+      <span class="badge-edutec">EduTec JHF</span>
     </div>
-    <span style="font-size: 0.9rem; color: var(--texto-suave);">v1.0.0</span>
+    <span style="font-size: 0.85rem; color: var(--texto-suave);">v1.0.0 — Software Libre y Gratuito</span>
   </header>
 
   <main>
+    <!-- HERO / SECCION PRINCIPAL -->
     <section class="hero">
       <div class="hero-contenido">
         <h1 class="hero-titulo">Programación por bloques para <span>Arduino</span></h1>
         <p class="hero-bajada">
-          Pensado específicamente para escuelas técnicas. Arrastrá bloques, generá código C++ en tiempo real y cargalo en tu placa sin necesidad de conexión a internet.
+          Entorno educativo diseñado específicamente para estudiantes de escuelas técnicas. Generá código en tiempo real, compilá y cargá tu programa sin depender de internet.
         </p>
-        <div class="acciones-descarga">
-          <a href="#" class="btn-principal">
-            Descargar gratis para Windows
-          </a>
+
+        <!-- PANEL DE DESCARGAS MULTIPLATAFORMA -->
+        <div class="panel-descargas">
+          <div class="titulo-descargas">Descargar JHF Blocks:</div>
+          <div class="grid-botones">
+            <a href="#" class="btn-descarga btn-win64">
+              <span>Windows 64-bit</span>
+              <span class="subtexto">Instalador (.exe)</span>
+            </a>
+            <a href="#" class="btn-descarga btn-win32">
+              <span>Windows 32-bit</span>
+              <span class="subtexto">Netbooks antiguas</span>
+            </a>
+            <a href="#" class="btn-descarga btn-mac">
+              <span>macOS</span>
+              <span class="subtexto">Intel / Apple Silicon</span>
+            </a>
+            <a href="#" class="btn-descarga btn-movil">
+              <span>Android Móvil</span>
+              <span class="subtexto">Archivo APK</span>
+            </a>
+          </div>
           <div class="info-offline">
-            <span class="punto-verde"></span> 100% Gratuito — Funciona sin internet (Offline)
+            <span class="punto-verde"></span> 100% Gratuito — Funciona totalmente offline sin conexión a internet
           </div>
         </div>
       </div>
 
-      <div class="tarjeta-preview">
-        <!-- Robot Mascota EduTec JHF -->
-        <svg class="robot-svg" viewBox="0 0 210 92">
-          <rect class="oruga-base" x="88" y="72" width="34" height="14" rx="7" />
-          <circle class="oruga-centro" cx="95" cy="79" r="3" />
-          <circle class="oruga-centro" cx="105" cy="79" r="3" />
-          <circle class="oruga-centro" cx="115" cy="79" r="3" />
-          <rect class="cuerpo" x="90" y="52" width="30" height="22" rx="4" />
-          <rect class="pecho-panel" x="95" y="56" width="20" height="12" rx="2" />
-          <circle class="pecho-detalle" cx="105" cy="62" r="3" />
-          <rect class="brazo" x="82" y="54" width="8" height="14" rx="3" />
-          <rect class="brazo" x="120" y="54" width="8" height="14" rx="3" />
-          <circle class="auricular" cx="78" cy="36" r="6" />
-          <circle class="auricular" cx="132" cy="36" r="6" />
-          <rect class="cabeza" x="81" y="20" width="48" height="32" rx="10" />
-          <rect class="pantalla" x="86" y="25" width="38" height="22" rx="6" />
-          <path class="ojo-feliz" d="M 93 34 Q 98 28 103 34" />
-          <path class="ojo-feliz" d="M 107 34 Q 112 28 117 34" />
-          <path class="sonrisa" d="M 98 40 Q 105 45 112 40" />
-          <g class="birrete-grupo">
-            <rect class="birrete-base" x="95" y="16" width="20" height="6" rx="1" />
-            <polygon class="birrete-tabla" points="80,16 105,10 130,16 105,20" />
-            <path class="birrete-cordon" d="M 105 13 L 124 20 L 124 25" />
-            <circle class="borla" cx="124" cy="27" r="3" />
+      <!-- MARCA / LOGO OFICIAL VECTORIZADO -->
+      <div class="tarjeta-logo">
+        <svg class="logo-oficial-svg" viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fondo y circuitos traseros -->
+          <circle cx="250" cy="230" r="190" fill="none" stroke="#1D4E8F" stroke-width="6" stroke-dasharray="8 6"/>
+          <path d="M 80 180 A 170 170 0 0 1 380 100" fill="none" stroke="#F58220" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="95" cy="165" r="7" fill="#1D4E8F"/>
+          <circle cx="365" cy="95" r="7" fill="#F58220"/>
+          <path d="M 120 130 L 160 130 L 180 160" fill="none" stroke="#F58220" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="120" cy="130" r="6" fill="#F58220"/>
+          
+          <!-- Rueda oruga del robot -->
+          <rect x="295" y="325" width="70" height="35" rx="17.5" fill="#16261C" stroke="#16261C" stroke-width="4"/>
+          <circle cx="312" cy="342" r="10" fill="#F58220" stroke="#16261C" stroke-width="3"/>
+          <circle cx="348" cy="342" r="10" fill="#F58220" stroke="#16261C" stroke-width="3"/>
+          
+          <!-- Cuerpo del Robot -->
+          <rect x="200" y="220" width="105" height="95" rx="14" fill="#E9F0EA" stroke="#16261C" stroke-width="6"/>
+          <rect x="220" y="240" width="65" height="45" rx="6" fill="#F58220" stroke="#16261C" stroke-width="4"/>
+          <rect x="235" y="252" width="35" height="20" rx="4" fill="#1D4E8F"/>
+          
+          <!-- Engranaje frontal grande con llave -->
+          <g transform="translate(170, 310)">
+            <circle cx="0" cy="0" r="55" fill="#F58220" stroke="#16261C" stroke-width="6"/>
+            <!-- Dientes de engranaje -->
+            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5"/>
+            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(45)"/>
+            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(90)"/>
+            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(135)"/>
+            <circle cx="0" cy="0" r="32" fill="#E9F0EA" stroke="#16261C" stroke-width="5"/>
+            <!-- Llave fija dentro del engranaje -->
+            <path d="M -15 15 L 10 -10 M 5 -15 L 18 -2 M -8 8 L -20 20" stroke="#1D4E8F" stroke-width="8" stroke-linecap="round"/>
+          </g>
+          
+          <!-- Brazo izquierdo sosteniendo engranaje pequeño -->
+          <path d="M 205 245 C 160 230 140 210 150 180" fill="none" stroke="#16261C" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="150" cy="180" r="14" fill="#F58220" stroke="#16261C" stroke-width="4"/>
+          <!-- Engranaje pequeño en la mano -->
+          <circle cx="150" cy="180" r="12" fill="#1D4E8F" stroke="#16261C" stroke-width="3"/>
+
+          <!-- Brazo derecho sosteniendo destornillador -->
+          <path d="M 300 245 Q 340 250 310 280" fill="none" stroke="#16261C" stroke-width="10" stroke-linecap="round"/>
+          <!-- Destornillador -->
+          <rect x="270" y="240" width="35" height="14" rx="4" fill="#F58220" stroke="#16261C" stroke-width="3" transform="rotate(-35 270 240)"/>
+          <rect x="250" y="250" width="30" height="6" fill="#E9F0EA" stroke="#16261C" stroke-width="2" transform="rotate(-35 250 250)"/>
+
+          <!-- Auriculares laterales -->
+          <circle cx="170" cy="140" r="18" fill="#F58220" stroke="#16261C" stroke-width="5"/>
+          <circle cx="170" cy="140" r="9" fill="#16261C"/>
+          <circle cx="330" cy="140" r="18" fill="#F58220" stroke="#16261C" stroke-width="5"/>
+          <circle cx="330" cy="140" r="9" fill="#16261C"/>
+
+          <!-- Cabeza del Robot -->
+          <rect x="180" y="80" width="140" height="110" rx="35" fill="#F58220" stroke="#16261C" stroke-width="7"/>
+          <!-- Pantalla facial -->
+          <rect x="196" y="96" width="108" height="78" rx="20" fill="#1D4E8F" stroke="#16261C" stroke-width="5"/>
+          <!-- Ojos y Sonrisa -->
+          <ellipse cx="228" cy="130" rx="9" ry="14" fill="#58C4F6"/>
+          <ellipse cx="272" cy="130" rx="9" ry="14" fill="#58C4F6"/>
+          <path d="M 233 154 Q 250 168 267 154" fill="none" stroke="#58C4F6" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- Birrete de graduación -->
+          <rect x="225" y="65" width="50" height="20" rx="3" fill="#1D4E8F" stroke="#16261C" stroke-width="4"/>
+          <polygon points="160,65 250,40 340,65 250,85" fill="#1D4E8F" stroke="#16261C" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M 250 62 Q 300 65 315 95" fill="none" stroke="#1D4E8F" stroke-width="4"/>
+          <circle cx="315" cy="102" r="7" fill="#F58220" stroke="#16261C" stroke-width="3"/>
+
+          <!-- Destellos -->
+          <path d="M 135 110 L 140 95 L 145 110 L 160 115 L 145 120 L 140 135 L 135 120 L 120 115 Z" fill="#F58220"/>
+          <path d="M 365 170 L 370 160 L 375 170 L 385 175 L 375 180 L 370 190 L 365 180 L 355 175 Z" fill="#F58220"/>
+
+          <!-- TEXTO PROTTAGONISTA "EduTec JHF" CON ESTILO CIRCUITO -->
+          <g transform="translate(20, 420)">
+            <!-- EduTec -->
+            <text x="0" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="92" font-weight="900" fill="#1D4E8F" stroke="#16261C" stroke-width="6" letter-spacing="-2">Edu<tspan fill="#F58220">Tec</tspan></text>
+            <!-- JHF -->
+            <text x="110" y="145" font-family="'Segoe UI', Arial, sans-serif" font-size="80" font-weight="900" fill="#1D4E8F" stroke="#16261C" stroke-width="6" letter-spacing="4">J<tspan fill="#F58220">H</tspan>F</text>
+            <!-- Pistas de circuito decorativas en el texto -->
+            <circle cx="22" cy="20" r="4" fill="#E9F0EA"/>
+            <circle cx="160" cy="35" r="4" fill="#E9F0EA"/>
+            <circle cx="280" cy="25" r="4" fill="#E9F0EA"/>
+            <circle cx="150" cy="105" r="4" fill="#E9F0EA"/>
+            <circle cx="300" cy="120" r="4" fill="#E9F0EA"/>
           </g>
         </svg>
-        <p style="margin-top: 1rem; font-weight: 600; color: var(--texto-suave);">Ligero y optimizado para netbooks escolares</p>
       </div>
     </section>
 
+    <!-- SECCION HISTORIA DEL DESARROLLADOR -->
+    <section class="seccion-historia">
+      <div class="caja-historia">
+        <h2>La historia detrás de JHF Blocks</h2>
+        <p>
+          Esta aplicación fue creada por <strong>Jordán José</strong>, Técnico Superior en Electrónica, con el objetivo de derribar las barreras de acceso a la tecnología y la robótica en el ámbito educativo.
+        </p>
+        <p>
+          Conociendo de primera mano la realidad de los talleres escolares y las escuelas técnicas, donde la conectividad a internet suele ser inestable o inexistente y el equipamiento informático abarca desde netbooks educativas hasta computadoras de escritorio modernas, Jordán desarrolló **JHF Blocks** como una solución integral 100% autónoma, liviana y accesible para cualquier estudiante.
+        </p>
+      </div>
+    </section>
+
+    <!-- CARACTERISTICAS -->
     <section class="caracteristicas">
-      <h2 style="text-align: center; font-size: 1.8rem;">¿Por qué JHF Blocks?</h2>
+      <h2 style="text-align: center; font-size: 1.8rem; color: var(--texto);">Diseñado para el aula y el taller</h2>
       <div class="grid-caracteristicas">
         <div class="item-caracteristica">
-          <h3>Sin Internet</h3>
-          <p>Todo está empaquetado. La aplicación compila y sube el programa directamente desde la netbook o PC sin requerir red.</p>
+          <h3>Autónomo y Offline</h3>
+          <p>Compila y sube el código directamente a la placa mediante <code>arduino-cli</code> integrado. No requiere conexión a internet.</p>
         </div>
         <div class="item-caracteristica">
-          <h3>Traducción en Tiempo Real</h3>
-          <p>Mirá cómo tus bloques construyen el código C++ original de Arduino mientras armas tu programa.</p>
+          <h3>Compatibilidad Amplia</h3>
+          <p>Soporta placas Arduino Uno, Mega y los populares clones Nano (tanto con nuevo como con antiguo bootloader CH340).</p>
         </div>
         <div class="item-caracteristica">
-          <h3>Soporte para Clones de Placas</h3>
-          <p>Configuración rápida para Arduino Uno, Mega y los populares Nano con bootloader viejo o nuevo (CH340).</p>
+          <h3>Multiplataforma Real</h3>
+          <p>Disponible para sistemas de 32 y 64 bits en Windows, así como versiones optimizadas para macOS y dispositivos móviles.</p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- PIE DE PAGINA -->
   <footer>
-    <p>© EduTec JHF — Emprendimiento de Tecnología Educativa Argentina.</p>
-    <p style="font-size: 0.8rem; margin-top: 5px;">Desarrollado para el fortalecimiento de las escuelas técnicas.</p>
+    <p><strong>EduTec JHF</strong> — Impulsando la educación técnica y la electrónica aplicada.</p>
+    <p style="font-size: 0.8rem; margin-top: 5px;">Desarrollado por Jordán José, Técnico Superior en Electrónica.</p>
   </footer>
 
 </body>
