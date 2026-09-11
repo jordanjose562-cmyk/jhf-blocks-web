@@ -48,12 +48,12 @@
     .marca-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo-header {
-      width: 42px;
-      height: 42px;
+      height: 45px;
+      width: auto;
     }
 
     .nombre-app {
@@ -76,9 +76,9 @@
       font-weight: 600;
     }
 
-    /* Hero */
+    /* Hero principal */
     .hero {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 2.5rem auto;
       padding: 0 1.5rem;
       display: grid;
@@ -123,8 +123,8 @@
 
     .grid-botones {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.7rem;
     }
 
     .btn-descarga {
@@ -132,7 +132,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem 0.5rem;
+      padding: 0.75rem 0.4rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
@@ -142,29 +142,19 @@
       text-align: center;
     }
 
-    .btn-win64 {
-      background-color: var(--verde);
-      color: white;
-    }
+    .btn-win64 { background-color: var(--verde); color: white; }
     .btn-win64:hover { background-color: #0d7033; }
 
-    .btn-win32 {
-      background-color: var(--superficie-2);
-      color: var(--texto);
-      border-color: var(--linea);
-    }
+    .btn-win32 { background-color: var(--superficie-2); color: var(--texto); border-color: var(--linea); }
     .btn-win32:hover { background-color: var(--linea); }
 
-    .btn-mac {
-      background-color: var(--marca-azul);
-      color: white;
-    }
+    .btn-tablet { background-color: #7952B3; color: white; }
+    .btn-tablet:hover { background-color: #613d96; }
+
+    .btn-mac { background-color: var(--marca-azul); color: white; }
     .btn-mac:hover { background-color: #153c70; }
 
-    .btn-movil {
-      background-color: var(--marca-naranja);
-      color: white;
-    }
+    .btn-movil { background-color: var(--marca-naranja); color: white; }
     .btn-movil:hover { background-color: #d66f15; }
 
     .btn-descarga .subtexto {
@@ -195,21 +185,84 @@
       background: var(--superficie);
       border: 2px solid var(--linea);
       border-radius: 12px;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
-    .logo-oficial-svg {
+    .logo-oficial-img {
       width: 100%;
-      max-width: 280px;
+      max-width: 310px;
       height: auto;
+      object-fit: contain;
+    }
+
+    /* Galeria de Capturas del Programa */
+    .seccion-capturas {
+      max-width: 1150px;
+      margin: 3.5rem auto 1rem;
+      padding: 0 1.5rem;
+    }
+
+    .seccion-capturas h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--texto);
+    }
+
+    .subtitulo-galeria {
+      text-align: center;
+      color: var(--texto-suave);
+      margin-bottom: 2rem;
+    }
+
+    .grid-capturas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tarjeta-captura {
+      background: var(--superficie);
+      border: 1px solid var(--linea);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .tarjeta-captura:hover {
+      transform: translateY(-4px);
+    }
+
+    .tarjeta-captura img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: top left;
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .info-captura {
+      padding: 1rem;
+    }
+
+    .info-captura h3 {
+      font-size: 1.05rem;
+      color: var(--marca-azul);
+      margin-bottom: 0.3rem;
+    }
+
+    .info-captura p {
+      font-size: 0.88rem;
+      color: var(--texto-suave);
     }
 
     /* Historia */
     .seccion-historia {
-      max-width: 1100px;
-      margin: 3rem auto;
+      max-width: 1150px;
+      margin: 3.5rem auto;
       padding: 0 1.5rem;
     }
 
@@ -239,7 +292,7 @@
 
     /* Caracteristicas */
     .caracteristicas {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 3rem auto 4rem;
       padding: 0 1.5rem;
     }
@@ -302,14 +355,7 @@
   <!-- ENCABEZADO -->
   <header>
     <div class="marca-header">
-      <!-- Icono simplificado para header -->
-      <svg class="logo-header" viewBox="0 0 100 100">
-        <rect x="20" y="25" width="60" height="42" rx="12" fill="#F58220" stroke="#1D4E8F" stroke-width="4"/>
-        <rect x="28" y="32" width="44" height="28" rx="6" fill="#1D4E8F"/>
-        <ellipse cx="42" cy="46" rx="4" ry="6" fill="#39FF14"/>
-        <ellipse cx="58" cy="46" rx="4" ry="6" fill="#39FF14"/>
-        <polygon points="15,22 50,12 85,22 50,30" fill="#1D4E8F" stroke="#16261C" stroke-width="3"/>
-      </svg>
+      <img src="logo.png" alt="EduTec JHF Logo" class="logo-header">
       <div class="nombre-app">JHF <span>Blocks</span></div>
       <span class="badge-edutec">EduTec JHF</span>
     </div>
@@ -337,9 +383,13 @@
               <span>Windows 32-bit</span>
               <span class="subtexto">Netbooks antiguas</span>
             </a>
+            <a href="#" class="btn-descarga btn-tablet">
+              <span>Tablet PC</span>
+              <span class="subtexto">Windows / Touch</span>
+            </a>
             <a href="#" class="btn-descarga btn-mac">
               <span>macOS</span>
-              <span class="subtexto">Intel / Apple Silicon</span>
+              <span class="subtexto">Intel / Apple</span>
             </a>
             <a href="#" class="btn-descarga btn-movil">
               <span>Android Móvil</span>
@@ -352,91 +402,41 @@
         </div>
       </div>
 
-      <!-- MARCA / LOGO OFICIAL VECTORIZADO -->
+      <!-- MARCA / LOGO OFICIAL ORIGINAL -->
       <div class="tarjeta-logo">
-        <svg class="logo-oficial-svg" viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
-          <!-- Fondo y circuitos traseros -->
-          <circle cx="250" cy="230" r="190" fill="none" stroke="#1D4E8F" stroke-width="6" stroke-dasharray="8 6"/>
-          <path d="M 80 180 A 170 170 0 0 1 380 100" fill="none" stroke="#F58220" stroke-width="8" stroke-linecap="round"/>
-          <circle cx="95" cy="165" r="7" fill="#1D4E8F"/>
-          <circle cx="365" cy="95" r="7" fill="#F58220"/>
-          <path d="M 120 130 L 160 130 L 180 160" fill="none" stroke="#F58220" stroke-width="5" stroke-linecap="round"/>
-          <circle cx="120" cy="130" r="6" fill="#F58220"/>
-          
-          <!-- Rueda oruga del robot -->
-          <rect x="295" y="325" width="70" height="35" rx="17.5" fill="#16261C" stroke="#16261C" stroke-width="4"/>
-          <circle cx="312" cy="342" r="10" fill="#F58220" stroke="#16261C" stroke-width="3"/>
-          <circle cx="348" cy="342" r="10" fill="#F58220" stroke="#16261C" stroke-width="3"/>
-          
-          <!-- Cuerpo del Robot -->
-          <rect x="200" y="220" width="105" height="95" rx="14" fill="#E9F0EA" stroke="#16261C" stroke-width="6"/>
-          <rect x="220" y="240" width="65" height="45" rx="6" fill="#F58220" stroke="#16261C" stroke-width="4"/>
-          <rect x="235" y="252" width="35" height="20" rx="4" fill="#1D4E8F"/>
-          
-          <!-- Engranaje frontal grande con llave -->
-          <g transform="translate(170, 310)">
-            <circle cx="0" cy="0" r="55" fill="#F58220" stroke="#16261C" stroke-width="6"/>
-            <!-- Dientes de engranaje -->
-            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5"/>
-            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(45)"/>
-            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(90)"/>
-            <rect x="-10" y="-68" width="20" height="136" rx="4" fill="#F58220" stroke="#16261C" stroke-width="5" transform="rotate(135)"/>
-            <circle cx="0" cy="0" r="32" fill="#E9F0EA" stroke="#16261C" stroke-width="5"/>
-            <!-- Llave fija dentro del engranaje -->
-            <path d="M -15 15 L 10 -10 M 5 -15 L 18 -2 M -8 8 L -20 20" stroke="#1D4E8F" stroke-width="8" stroke-linecap="round"/>
-          </g>
-          
-          <!-- Brazo izquierdo sosteniendo engranaje pequeño -->
-          <path d="M 205 245 C 160 230 140 210 150 180" fill="none" stroke="#16261C" stroke-width="10" stroke-linecap="round"/>
-          <circle cx="150" cy="180" r="14" fill="#F58220" stroke="#16261C" stroke-width="4"/>
-          <!-- Engranaje pequeño en la mano -->
-          <circle cx="150" cy="180" r="12" fill="#1D4E8F" stroke="#16261C" stroke-width="3"/>
+        <img src="logo.png" alt="EduTec JHF Mascot Logo" class="logo-oficial-img">
+      </div>
+    </section>
 
-          <!-- Brazo derecho sosteniendo destornillador -->
-          <path d="M 300 245 Q 340 250 310 280" fill="none" stroke="#16261C" stroke-width="10" stroke-linecap="round"/>
-          <!-- Destornillador -->
-          <rect x="270" y="240" width="35" height="14" rx="4" fill="#F58220" stroke="#16261C" stroke-width="3" transform="rotate(-35 270 240)"/>
-          <rect x="250" y="250" width="30" height="6" fill="#E9F0EA" stroke="#16261C" stroke-width="2" transform="rotate(-35 250 250)"/>
+    <!-- GALERIA DE CAPTURAS DEL PROGRAMA -->
+    <section class="seccion-capturas">
+      <h2>Conocé la interfaz de JHF Blocks</h2>
+      <p class="subtitulo-galeria">Diseño intuitivo con generación de código C++ en tiempo real</p>
 
-          <!-- Auriculares laterales -->
-          <circle cx="170" cy="140" r="18" fill="#F58220" stroke="#16261C" stroke-width="5"/>
-          <circle cx="170" cy="140" r="9" fill="#16261C"/>
-          <circle cx="330" cy="140" r="18" fill="#F58220" stroke="#16261C" stroke-width="5"/>
-          <circle cx="330" cy="140" r="9" fill="#16261C"/>
+      <div class="grid-capturas">
+        <div class="tarjeta-captura">
+          <img src="captura-motores.png" alt="Bloques de motores y control de robots">
+          <div class="info-captura">
+            <h3>Control de Motores y Robótica</h3>
+            <p>Bloques especializados para driver Puente H L298N, motores independientes y funciones preprogramadas para robots Araña, Sumo y Laberinto.</p>
+          </div>
+        </div>
 
-          <!-- Cabeza del Robot -->
-          <rect x="180" y="80" width="140" height="110" rx="35" fill="#F58220" stroke="#16261C" stroke-width="7"/>
-          <!-- Pantalla facial -->
-          <rect x="196" y="96" width="108" height="78" rx="20" fill="#1D4E8F" stroke="#16261C" stroke-width="5"/>
-          <!-- Ojos y Sonrisa -->
-          <ellipse cx="228" cy="130" rx="9" ry="14" fill="#58C4F6"/>
-          <ellipse cx="272" cy="130" rx="9" ry="14" fill="#58C4F6"/>
-          <path d="M 233 154 Q 250 168 267 154" fill="none" stroke="#58C4F6" stroke-width="5" stroke-linecap="round"/>
+        <div class="tarjeta-captura">
+          <img src="captura-sensores.png" alt="Bloques de sensores y código generado">
+          <div class="info-captura">
+            <h3>Sensores y Lectura de Datos</h3>
+            <p>Soporte completo para sensores ultrasónicos de distancia, infrarrojos, línea, temperatura DHT11/LM35 y nivel de luz.</p>
+          </div>
+        </div>
 
-          <!-- Birrete de graduación -->
-          <rect x="225" y="65" width="50" height="20" rx="3" fill="#1D4E8F" stroke="#16261C" stroke-width="4"/>
-          <polygon points="160,65 250,40 340,65 250,85" fill="#1D4E8F" stroke="#16261C" stroke-width="6" stroke-linejoin="round"/>
-          <path d="M 250 62 Q 300 65 315 95" fill="none" stroke="#1D4E8F" stroke-width="4"/>
-          <circle cx="315" cy="102" r="7" fill="#F58220" stroke="#16261C" stroke-width="3"/>
-
-          <!-- Destellos -->
-          <path d="M 135 110 L 140 95 L 145 110 L 160 115 L 145 120 L 140 135 L 135 120 L 120 115 Z" fill="#F58220"/>
-          <path d="M 365 170 L 370 160 L 375 170 L 385 175 L 375 180 L 370 190 L 365 180 L 355 175 Z" fill="#F58220"/>
-
-          <!-- TEXTO PROTTAGONISTA "EduTec JHF" CON ESTILO CIRCUITO -->
-          <g transform="translate(20, 420)">
-            <!-- EduTec -->
-            <text x="0" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="92" font-weight="900" fill="#1D4E8F" stroke="#16261C" stroke-width="6" letter-spacing="-2">Edu<tspan fill="#F58220">Tec</tspan></text>
-            <!-- JHF -->
-            <text x="110" y="145" font-family="'Segoe UI', Arial, sans-serif" font-size="80" font-weight="900" fill="#1D4E8F" stroke="#16261C" stroke-width="6" letter-spacing="4">J<tspan fill="#F58220">H</tspan>F</text>
-            <!-- Pistas de circuito decorativas en el texto -->
-            <circle cx="22" cy="20" r="4" fill="#E9F0EA"/>
-            <circle cx="160" cy="35" r="4" fill="#E9F0EA"/>
-            <circle cx="280" cy="25" r="4" fill="#E9F0EA"/>
-            <circle cx="150" cy="105" r="4" fill="#E9F0EA"/>
-            <circle cx="300" cy="120" r="4" fill="#E9F0EA"/>
-          </g>
-        </svg>
+        <div class="tarjeta-captura">
+          <img src="captura-pantallas.png" alt="Categorías de pantallas e interfaz lateral">
+          <div class="info-captura">
+            <h3>Pantallas y Categorías Claras</h3>
+            <p>Módulos de visualización para pantallas LCD, Matrices LED, TFT a color y módulos de comunicación Bluetooth y tiempo.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -448,7 +448,7 @@
           Esta aplicación fue creada por <strong>Jordán José</strong>, Técnico Superior en Electrónica, con el objetivo de derribar las barreras de acceso a la tecnología y la robótica en el ámbito educativo.
         </p>
         <p>
-          Conociendo de primera mano la realidad de los talleres escolares y las escuelas técnicas, donde la conectividad a internet suele ser inestable o inexistente y el equipamiento informático abarca desde netbooks educativas hasta computadoras de escritorio modernas, Jordán desarrolló **JHF Blocks** como una solución integral 100% autónoma, liviana y accesible para cualquier estudiante.
+          Conociendo de primera mano la realidad de los talleres escolares y las escuelas técnicas, donde la conectividad a internet suele ser inestable o inexistente y el equipamiento informático abarca desde netbooks educativas hasta computadoras de escritorio y tablets, Jordán desarrolló <strong>JHF Blocks</strong> como una solución integral 100% autónoma, liviana y accesible para cualquier estudiante.
         </p>
       </div>
     </section>
@@ -467,7 +467,7 @@
         </div>
         <div class="item-caracteristica">
           <h3>Multiplataforma Real</h3>
-          <p>Disponible para sistemas de 32 y 64 bits en Windows, así como versiones optimizadas para macOS y dispositivos móviles.</p>
+          <p>Disponible para PC de 32 y 64 bits, Tablet PC con pantalla táctil, macOS y dispositivos móviles.</p>
         </div>
       </div>
     </section>
