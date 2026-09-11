@@ -67,14 +67,15 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--primary);
     }
 
-    .logo i {
-      font-size: 1.8rem;
+    .logo img {
+      height: 40px;
+      width: auto;
     }
 
     .nav-links {
@@ -114,20 +115,20 @@
     .hero {
       background: linear-gradient(135deg, #0d6efd 0%, #0a47a1 100%);
       color: var(--white);
-      padding: 80px 0;
+      padding: 70px 0;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 30px auto;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     /* DESCARGAS & METRICAS */
@@ -136,7 +137,7 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .btn-download {
@@ -172,17 +173,21 @@
       justify-content: center;
       gap: 30px;
       font-size: 0.95rem;
-      opacity: 0.85;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 10px 20px;
+      border-radius: 20px;
+      width: fit-content;
+      margin: 0 auto;
     }
 
     .metric-item i {
-      margin-right: 5px;
+      margin-right: 6px;
     }
 
-    /* SECCION CAPTURAS */
+    /* SECCION CAPTURAS CON LAS IMÁGENES DEL REPOSITORIO */
     .section-title {
       text-align: center;
-      margin: 60px 0 30px 0;
+      margin: 50px 0 30px 0;
     }
 
     .section-title h2 {
@@ -198,7 +203,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 25px;
       margin-bottom: 60px;
     }
 
@@ -208,13 +213,19 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       display: block;
+      border-bottom: 1px solid var(--border);
     }
 
     .gallery-caption {
@@ -223,6 +234,7 @@
       color: var(--dark);
       text-align: center;
       font-weight: 500;
+      background: var(--white);
     }
 
     /* SECCION QUIENES SOMOS / EDUTEC JHF */
@@ -454,7 +466,9 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <i class="fas fa-cubes"></i> JHF Blocks
+          <!-- Logo oficial desde el repositorio -->
+          <img src="logo.png" alt="JHF Blocks Logo" onerror="this.style.display='none'">
+          <span>JHF Blocks</span>
         </div>
         <ul class="nav-links">
           <li><a href="#descargas">Descargas</a></li>
@@ -486,32 +500,38 @@
         </a>
       </div>
 
+      <!-- METRICAS DE VISITAS Y DESCARGAS -->
       <div class="metrics-bar">
-        <span class="metric-item"><i class="fas fa-eye"></i> Visitas: <strong id="visitsCount">...</strong></span>
-        <span class="metric-item"><i class="fas fa-file-download"></i> Descargas Totales: <strong id="downloadsCount">...</strong></span>
+        <span class="metric-item"><i class="fas fa-eye"></i> Visitas: <strong id="visitsCount">0</strong></span>
+        <span class="metric-item"><i class="fas fa-file-download"></i> Descargas: <strong id="downloadsCount">0</strong></span>
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA DE CAPTURAS -->
+  <!-- GALERÍA DE CAPTURAS DESDE EL REPOSITORIO -->
   <section class="container" id="capturas">
     <div class="section-title">
-      <h2>Capturas del Programa</h2>
-      <p>Conocé la interfaz intuitiva y las herramientas integradas en JHF Blocks</p>
+      <h2>Módulos del Software</h2>
+      <p>Conocé la interfaz del programa en acción</p>
     </div>
 
     <div class="gallery-grid">
+      <!-- Captura 1: Sensores -->
       <div class="gallery-item">
-        <img src="img/captura1.png" alt="Interfaz Principal de Bloques" onerror="this.src='https://via.placeholder.com/400x250?text=Entorno+por+Bloques'">
-        <div class="gallery-caption">Entorno Gráfico de Programación por Bloques</div>
+        <img src="captura_sensores.png" alt="Captura Sensores JHF Blocks" onerror="this.src='https://via.placeholder.com/400x220?text=Captura+Sensores'">
+        <div class="gallery-caption">Integración y Lectura de Sensores</div>
       </div>
+
+      <!-- Captura 2: Entorno Principal -->
       <div class="gallery-item">
-        <img src="img/captura2.png" alt="Generador de Código C++ Arduino" onerror="this.src='https://via.placeholder.com/400x250?text=Generador+de+Codigo+Arduino'">
-        <div class="gallery-caption">Generación y Visor de Código C++ en Tiempo Real</div>
+        <img src="captura1.png" alt="Entorno de Bloques" onerror="this.src='https://via.placeholder.com/400x220?text=Entorno+por+Bloques'">
+        <div class="gallery-caption">Programación por Bloques Interactivos</div>
       </div>
+
+      <!-- Captura 3: Código y Carga -->
       <div class="gallery-item">
-        <img src="img/captura3.png" alt="Compilación y Carga con arduino-cli" onerror="this.src='https://via.placeholder.com/400x250?text=Carga+Directa+a+Placa'">
-        <div class="gallery-caption">Carga Directa a Placas Arduino (Offline)</div>
+        <img src="captura2.png" alt="Visor de Código" onerror="this.src='https://via.placeholder.com/400x220?text=Visor+de+Codigo'">
+        <div class="gallery-caption">Generación de Código C++ y Carga a Placas</div>
       </div>
     </div>
   </section>
@@ -624,7 +644,7 @@
         <p><strong>Autor y Creador:</strong> Prof. Jordán José (Técnico Superior en Electrónica)</p>
         <p><strong>Colaboradores:</strong> Germán Hormachea &amp; Christopher Farfán</p>
         <p><strong>Licencia:</strong> Software Educativo Libre para escuelas técnicas e instituciones públicas.</p>
-        <p><strong>Tecnologías:</strong> Electron, Blockly, Node.js &amp; arduino-cli.</p>
+        <p><strong>Tecnologías:</strong> C#, Electron, Blockly, Node.js &amp; arduino-cli.</p>
         <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border);">
         <p style="font-size: 0.85rem; color: var(--secondary);">
           Propiedad Intelectual registrada ante la Dirección Nacional del Derecho de Autor (DNDA) de la República Argentina.
@@ -633,50 +653,28 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT / METRICAS Y MODAL -->
+  <!-- JAVASCRIPT DE CONTADORES Y MODAL -->
   <script>
-    // Configuración de Contadores CountAPI
-    const NAMESPACE = 'jhfblocks_edutec_site';
-    const KEY_VISITS = 'site_visits';
-    const KEY_DOWNLOADS = 'total_downloads';
+    // CONTADORES LOCALES LIMPIOS (Arrancan en 0 o según interacción real)
+    
+    // 1. Contador de Visitas
+    let visits = parseInt(localStorage.getItem('jhf_visits') || '0');
+    visits += 1;
+    localStorage.setItem('jhf_visits', visits);
+    document.getElementById('visitsCount').innerText = visits;
 
-    // 1. Contador de Visitas (Suma +1 al cargar la página)
-    fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY_VISITS}`)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('visitsCount').innerText = data.value;
-      })
-      .catch(() => {
-        document.getElementById('visitsCount').innerText = '1,240+'; // Fallback
-      });
+    // 2. Contador de Descargas
+    let downloads = parseInt(localStorage.getItem('jhf_downloads') || '0');
+    document.getElementById('downloadsCount').innerText = downloads;
 
-    // 2. Obtener Total de Descargas actual
-    function loadDownloadsCount() {
-      fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${KEY_DOWNLOADS}`)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('downloadsCount').innerText = data.value || '0';
-        })
-        .catch(() => {
-          document.getElementById('downloadsCount').innerText = '450+'; // Fallback
-        });
-    }
-
-    // 3. Incrementar Descargas al hacer clic en cualquier botón
     function registerDownload() {
-      fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY_DOWNLOADS}`)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('downloadsCount').innerText = data.value;
-        })
-        .catch(() => {});
+      downloads += 1;
+      localStorage.setItem('jhf_downloads', downloads);
+      document.getElementById('downloadsCount').innerText = downloads;
     }
 
     document.getElementById('installerBtn').addEventListener('click', registerDownload);
     document.getElementById('patchBtn').addEventListener('click', registerDownload);
-
-    // Cargar contador de descargas al iniciar
-    loadDownloadsCount();
 
     // LÓGICA DEL MODAL "ACERCA DE"
     const modal = document.getElementById('aboutModal');
