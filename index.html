@@ -74,8 +74,9 @@
     }
 
     .logo img {
-      height: 40px;
+      height: 42px;
       width: auto;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -184,7 +185,7 @@
       margin-right: 6px;
     }
 
-    /* SECCION CAPTURAS CON LAS IMÁGENES DEL REPOSITORIO */
+    /* SECCION CAPTURAS CON LAS IMÁGENES EXACTAS DEL REPOSITORIO */
     .section-title {
       text-align: center;
       margin: 50px 0 30px 0;
@@ -466,8 +467,8 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <!-- Logo oficial desde el repositorio -->
-          <img src="logo.png" alt="JHF Blocks Logo" onerror="this.style.display='none'">
+          <!-- Logo oficial subido al repositorio -->
+          <img src="logo.png" alt="JHF Blocks Logo">
           <span>JHF Blocks</span>
         </div>
         <ul class="nav-links">
@@ -488,19 +489,19 @@
 
       <div class="downloads-container">
         <!-- Botón Instalador Completo v1.1.0 -->
-        <a href="https://github.com/tu-usuario/jhf-blocks/releases/download/v1.1.0/JHF-Blocks-Setup-1.1.0.exe" 
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Setup-1.1.0.exe" 
            class="btn-download btn-installer" id="installerBtn" download>
           <i class="fas fa-download"></i> Descargar Instalador v1.1.0 (.exe)
         </a>
 
         <!-- Botón Parche de Actualización v1.5.2 -->
-        <a href="https://github.com/tu-usuario/jhf-blocks/releases/download/v1.5.2/JHF-Blocks-Patch-1.5.2.zip" 
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Patch-1.5.2.zip" 
            class="btn-download btn-patch" id="patchBtn" download>
           <i class="fas fa-sync-alt"></i> Actualización Parche v1.5.2 (.zip)
         </a>
       </div>
 
-      <!-- METRICAS DE VISITAS Y DESCARGAS -->
+      <!-- METRICAS DE VISITAS Y DESCARGAS REALES -->
       <div class="metrics-bar">
         <span class="metric-item"><i class="fas fa-eye"></i> Visitas: <strong id="visitsCount">0</strong></span>
         <span class="metric-item"><i class="fas fa-file-download"></i> Descargas: <strong id="downloadsCount">0</strong></span>
@@ -508,7 +509,7 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE CAPTURAS DESDE EL REPOSITORIO -->
+  <!-- GALERÍA DE CAPTURAS CON NOMBRES DE ARCHIVOS DEL REPOSITORIO -->
   <section class="container" id="capturas">
     <div class="section-title">
       <h2>Módulos del Software</h2>
@@ -516,22 +517,22 @@
     </div>
 
     <div class="gallery-grid">
-      <!-- Captura 1: Sensores -->
+      <!-- Imagen 1: captura-sensores.png -->
       <div class="gallery-item">
-        <img src="captura_sensores.png" alt="Captura Sensores JHF Blocks" onerror="this.src='https://via.placeholder.com/400x220?text=Captura+Sensores'">
-        <div class="gallery-caption">Integración y Lectura de Sensores</div>
+        <img src="captura-sensores.png" alt="Módulo de Sensores - JHF Blocks">
+        <div class="gallery-caption">Módulo de Lectura e Integración de Sensores</div>
       </div>
 
-      <!-- Captura 2: Entorno Principal -->
+      <!-- Imagen 2: captura-motores.png -->
       <div class="gallery-item">
-        <img src="captura1.png" alt="Entorno de Bloques" onerror="this.src='https://via.placeholder.com/400x220?text=Entorno+por+Bloques'">
-        <div class="gallery-caption">Programación por Bloques Interactivos</div>
+        <img src="captura-motores.png" alt="Control de Motores - JHF Blocks">
+        <div class="gallery-caption">Control y Programación de Motores y Salidas</div>
       </div>
 
-      <!-- Captura 3: Código y Carga -->
+      <!-- Imagen 3: captura-pantallas.png -->
       <div class="gallery-item">
-        <img src="captura2.png" alt="Visor de Código" onerror="this.src='https://via.placeholder.com/400x220?text=Visor+de+Codigo'">
-        <div class="gallery-caption">Generación de Código C++ y Carga a Placas</div>
+        <img src="captura-pantallas.png" alt="Pantallas y Display - JHF Blocks">
+        <div class="gallery-caption">Manejo de Pantallas LCD, Displays y Salidas Visuales</div>
       </div>
     </div>
   </section>
@@ -653,9 +654,9 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT DE CONTADORES Y MODAL -->
+  <!-- JAVASCRIPT DE CONTADORES REALES Y MODAL -->
   <script>
-    // CONTADORES LOCALES LIMPIOS (Arrancan en 0 o según interacción real)
+    // CONTADORES LOCALES REALES (Empiezan en 0 o según uso real del usuario)
     
     // 1. Contador de Visitas
     let visits = parseInt(localStorage.getItem('jhf_visits') || '0');
