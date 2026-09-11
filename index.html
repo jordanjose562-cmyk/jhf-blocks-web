@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JHF Blocks — EduTec JHF</title>
   <style>
-    /* Paleta de colores oficial EduTec JHF */
     :root {
       --superficie: #FFFFFF;
       --superficie-2: #F1F6F2;
@@ -23,7 +22,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--lienzo); color: var(--texto); line-height: 1.6; }
 
-    /* Encabezado */
+    /* Header y Navegación */
     header {
       background-color: var(--superficie);
       border-bottom: 2px solid var(--linea);
@@ -41,6 +40,20 @@
     .nombre-app span { color: var(--marca-naranja); }
     .badge-edutec { font-size: 0.75rem; background: var(--superficie-2); color: var(--texto-suave); padding: 3px 8px; border-radius: 4px; border: 1px solid var(--linea); font-weight: 600; }
 
+    .header-acciones { display: flex; align-items: center; gap: 1rem; }
+    .btn-acerca {
+      background-color: var(--superficie-2);
+      border: 1px solid var(--linea);
+      color: var(--texto);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .btn-acerca:hover { background-color: var(--linea); }
+
     /* Hero Principal */
     .hero {
       max-width: 1150px;
@@ -56,10 +69,10 @@
     .hero-titulo span { color: var(--verde); }
     .hero-bajada { color: var(--texto-suave); font-size: 1.05rem; margin-bottom: 1.8rem; }
 
-    /* Panel de Descargas */
+    /* Panel Descargas */
     .panel-descargas { background: var(--superficie); border: 1px solid var(--linea); border-radius: 10px; padding: 1.2rem; }
     .titulo-descargas { font-size: 0.95rem; font-weight: 700; color: var(--texto); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .grid-botones { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.7rem; }
+    .grid-botones { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.7rem; }
 
     .btn-descarga {
       display: flex;
@@ -74,19 +87,20 @@
       transition: all 0.2s ease;
       border: 1px solid transparent;
       text-align: center;
+      cursor: pointer;
     }
 
     .btn-win64 { background-color: var(--verde); color: white; }
     .btn-win64:hover { background-color: #0d7033; }
+
+    .btn-parche { background-color: #E67E22; color: white; }
+    .btn-parche:hover { background-color: #d35400; }
 
     .btn-win32 { background-color: var(--superficie-2); color: var(--texto); border-color: var(--linea); }
     .btn-win32:hover { background-color: var(--linea); }
 
     .btn-tablet { background-color: #7952B3; color: white; }
     .btn-tablet:hover { background-color: #613d96; }
-
-    .btn-mac { background-color: var(--marca-azul); color: white; }
-    .btn-mac:hover { background-color: #153c70; }
 
     .btn-movil { background-color: var(--marca-naranja); color: white; }
     .btn-movil:hover { background-color: #d66f15; }
@@ -95,7 +109,19 @@
     .info-offline { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--texto-suave); margin-top: 1rem; }
     .punto-verde { width: 8px; height: 8px; background-color: var(--fluor); border-radius: 50%; }
 
-    /* Contenedor del Logo */
+    /* Métricas y Contadores */
+    .barra-metricas {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed var(--linea);
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+    }
+    .metrica-item { display: flex; align-items: center; gap: 6px; }
+    .metrica-item strong { color: var(--marca-azul); font-weight: 700; }
+
     .tarjeta-logo {
       background: var(--superficie);
       border: 2px solid var(--linea);
@@ -104,16 +130,26 @@
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
+    .logo-oficial-img { width: 100%; max-width: 310px; height: auto; object-fit: contain; }
 
-    .logo-oficial-img {
-      width: 100%;
-      max-width: 310px;
-      height: auto;
-      object-fit: contain;
+    /* Sección Actualización */
+    .seccion-parche { max-width: 1150px; margin: 1.5rem auto 0; padding: 0 1.5rem; }
+    .caja-parche {
+      background: #FFF8E7;
+      border: 1px solid #F39C12;
+      border-radius: 8px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
+    .info-parche h3 { color: #D35400; font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .info-parche p { color: #5D4037; font-size: 0.9rem; }
 
     /* Galería de Capturas */
-    .seccion-capturas { max-width: 1150px; margin: 3.5rem auto 1rem; padding: 0 1.5rem; }
+    .seccion-capturas { max-width: 1150px; margin: 3rem auto 1rem; padding: 0 1.5rem; }
     .seccion-capturas h2 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--texto); }
     .subtitulo-galeria { text-align: center; color: var(--texto-suave); margin-bottom: 2rem; }
     .grid-capturas { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
@@ -124,19 +160,8 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: transform 0.2s ease;
     }
-
-    .tarjeta-captura:hover { transform: translateY(-4px); }
-
-    .tarjeta-captura img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: top left;
-      border-bottom: 1px solid var(--linea);
-    }
-
+    .tarjeta-captura img { width: 100%; height: 220px; object-fit: cover; object-position: top left; border-bottom: 1px solid var(--linea); }
     .info-captura { padding: 1rem; }
     .info-captura h3 { font-size: 1.05rem; color: var(--marca-azul); margin-bottom: 0.3rem; }
     .info-captura p { font-size: 0.88rem; color: var(--texto-suave); }
@@ -146,16 +171,41 @@
     .caja-historia { background: var(--superficie); border: 1px solid var(--linea); border-left: 5px solid var(--marca-naranja); border-radius: 8px; padding: 2rem; }
     .caja-historia h2 { color: var(--marca-azul); font-size: 1.5rem; margin-bottom: 0.8rem; }
     .caja-historia p { color: var(--texto); font-size: 1rem; margin-bottom: 1rem; }
-    .caja-historia p:last-child { margin-bottom: 0; }
 
-    /* Características */
-    .caracteristicas { max-width: 1150px; margin: 3rem auto 4rem; padding: 0 1.5rem; }
-    .grid-caracteristicas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-    .item-caracteristica { background: var(--superficie); border: 1px solid var(--linea); padding: 1.5rem; border-radius: 8px; }
-    .item-caracteristica h3 { color: var(--verde); font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .item-caracteristica p { color: var(--texto-suave); font-size: 0.95rem; }
+    /* Modal Acerca de */
+    .modal-fondo {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal-contenido {
+      background: var(--superficie);
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      max-height: 85vh;
+      overflow-y: auto;
+      border: 1px solid var(--linea);
+    }
+    .modal-cerrar {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--texto-suave);
+    }
+    .modal-contenido h2 { color: var(--marca-azul); margin-bottom: 1rem; }
+    .modal-contenido h3 { color: var(--verde); font-size: 1.1rem; margin: 1rem 0 0.4rem; }
+    .modal-contenido ul { margin-left: 1.2rem; margin-bottom: 1rem; font-size: 0.95rem; }
+    .modal-contenido p { font-size: 0.95rem; color: var(--texto); margin-bottom: 0.8rem; }
 
-    /* Pie de página */
     footer { background-color: var(--superficie); border-top: 1px solid var(--linea); text-align: center; padding: 2rem 1.5rem; color: var(--texto-suave); font-size: 0.9rem; }
 
     @media (max-width: 850px) {
@@ -163,6 +213,8 @@
       .panel-descargas { text-align: left; }
       .hero-titulo { font-size: 2rem; }
       .info-offline { justify-content: center; }
+      .caja-parche { flex-direction: column; text-align: center; }
+      .barra-metricas { justify-content: center; flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -175,11 +227,14 @@
       <div class="nombre-app">JHF <span>Blocks</span></div>
       <span class="badge-edutec">EduTec JHF</span>
     </div>
-    <span style="font-size: 0.85rem; color: var(--texto-suave);">v1.0.0 — Software Libre y Gratuito</span>
+    <div class="header-acciones">
+      <span style="font-size: 0.85rem; color: var(--texto-suave);">v1.5.2</span>
+      <button class="btn-acerca" onclick="abrirModal()">Acerca de</button>
+    </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO Y DESCARGAS -->
     <section class="hero">
       <div class="hero-contenido">
         <h1 class="hero-titulo">Programación por bloques para <span>Arduino</span></h1>
@@ -187,44 +242,78 @@
           Entorno educativo diseñado específicamente para estudiantes de escuelas técnicas. Generá código en tiempo real, compilá y cargá tu programa sin depender de internet.
         </p>
 
-        <!-- PANEL DE DESCARGAS MULTIPLATAFORMA -->
         <div class="panel-descargas">
-          <div class="titulo-descargas">Descargar JHF Blocks:</div>
+          <div class="titulo-descargas">Descargas disponibles:</div>
           <div class="grid-botones">
-            <a href="#" class="btn-descarga btn-win64">
-              <span>Windows 64-bit</span>
-              <span class="subtexto">Instalador (.exe)</span>
+            
+            <!-- INSTALADOR COMPLETO v1.1.0 -->
+            <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.1.0.exe" 
+               class="btn-descarga btn-win64" 
+               onclick="registrarDescarga()">
+              <span>Instalador v1.1.0</span>
+              <span class="subtexto">Windows (.exe)</span>
             </a>
-            <a href="#" class="btn-descarga btn-win32">
+
+            <!-- PARCHE DE ACTUALIZACIÓN v1.5.2 -->
+            <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Actualizacion-1.5.2.zip" 
+               class="btn-descarga btn-parche" 
+               onclick="registrarDescarga()">
+              <span>Parche v1.5.2</span>
+              <span class="subtexto">Archivo ZIP</span>
+            </a>
+
+            <a href="#" class="btn-descarga btn-win32" onclick="registrarDescarga()">
               <span>Windows 32-bit</span>
               <span class="subtexto">Netbooks antiguas</span>
             </a>
-            <a href="#" class="btn-descarga btn-tablet">
+            <a href="#" class="btn-descarga btn-tablet" onclick="registrarDescarga()">
               <span>Tablet PC</span>
               <span class="subtexto">Windows / Touch</span>
             </a>
-            <a href="#" class="btn-descarga btn-mac">
-              <span>macOS</span>
-              <span class="subtexto">Intel / Apple</span>
-            </a>
-            <a href="#" class="btn-descarga btn-movil">
+            <a href="#" class="btn-descarga btn-movil" onclick="registrarDescarga()">
               <span>Android Móvil</span>
               <span class="subtexto">Archivo APK</span>
             </a>
           </div>
+
           <div class="info-offline">
             <span class="punto-verde"></span> 100% Gratuito — Funciona totalmente offline sin conexión a internet
+          </div>
+
+          <!-- CONTADORES -->
+          <div class="barra-metricas">
+            <div class="metrica-item">
+              👁️ Visitas a la página: <strong id="contador-visitas">cargando...</strong>
+            </div>
+            <div class="metrica-item">
+              ⬇️ Descargas totales: <strong id="contador-descargas">cargando...</strong>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- LOGO OFICIAL ORIGINAL -->
       <div class="tarjeta-logo">
         <img src="logo.png" alt="EduTec JHF Mascot Logo" class="logo-oficial-img">
       </div>
     </section>
 
-    <!-- GALERÍA DE CAPTURAS -->
+    <!-- CAJA INFORMATIVA DEL PARCHE -->
+    <section class="seccion-parche">
+      <div class="caja-parche">
+        <div class="info-parche">
+          <h3>¿Ya tenés instalado JHF Blocks v1.1.0?</h3>
+          <p>Descargá el archivo de actualización ZIP (v1.5.2) para aplicar los nuevos bloques y mejoras sin necesidad de reinstalar toda la aplicación.</p>
+        </div>
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Actualizacion-1.5.2.zip" 
+           class="btn-descarga btn-parche" 
+           style="padding: 0.8rem 1.5rem; text-decoration: none;"
+           onclick="registrarDescarga()">
+          <span>Descargar Parche ZIP v1.5.2</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CAPTURAS -->
     <section class="seccion-capturas">
       <h2>Conocé la interfaz de JHF Blocks</h2>
       <p class="subtitulo-galeria">Diseño intuitivo con generación de código C++ en tiempo real</p>
@@ -268,32 +357,62 @@
         </p>
       </div>
     </section>
-
-    <!-- CARACTERÍSTICAS -->
-    <section class="caracteristicas">
-      <h2 style="text-align: center; font-size: 1.8rem; color: var(--texto);">Diseñado para el aula y el taller</h2>
-      <div class="grid-caracteristicas">
-        <div class="item-caracteristica">
-          <h3>Autónomo y Offline</h3>
-          <p>Compila y sube el código directamente a la placa mediante <code>arduino-cli</code> integrado. No requiere conexión a internet.</p>
-        </div>
-        <div class="item-caracteristica">
-          <h3>Compatibilidad Amplia</h3>
-          <p>Soporta placas Arduino Uno, Mega y los populares clones Nano (tanto con nuevo como con antiguo bootloader CH340).</p>
-        </div>
-        <div class="item-caracteristica">
-          <h3>Multiplataforma Real</h3>
-          <p>Disponible para PC de 32 y 64 bits, Tablet PC con pantalla táctil, macOS y dispositivos móviles.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- VENTANA EMERGENTE (MODAL ACERCA DE) -->
+  <div class="modal-fondo" id="modalAcerca">
+    <div class="modal-contenido">
+      <button class="modal-cerrar" onclick="cerrarModal()">&times;</button>
+      <h2>Acerca de JHF Blocks</h2>
+      <p><strong>JHF Blocks v1.5.2</strong> es una plataforma de entorno gráfico desarrollada para facilitar la enseñanza y el aprendizaje de la programación en microcontroladores Arduino.</p>
+      
+      <h3>Reconocimientos y Créditos de Licencia</h3>
+      <p>Esta aplicación fue creada por <strong>Jordán José</strong> (Técnico Superior en Electrónica) e integra tecnologías y herramientas de código abierto de la comunidad de software libre:</p>
+      <ul>
+        <li><strong>Google Blockly:</strong> Motor de interfaz visual de programación por bloques (Licencia Apache 2.0).</li>
+        <li><strong>Arduino CLI:</strong> Herramienta oficial de compilación y subida de código a placas Arduino (Licencia GPLv3).</li>
+        <li><strong>Electron Framework:</strong> Entorno para empaquetado de aplicaciones de escritorio multiplataforma (Licencia MIT).</li>
+      </ul>
+
+      <h3>Derechos de Autor</h3>
+      <p>© EduTec JHF — Software Libre para fines educativos. Permitida su redistribución sin fines de lucro en escuelas técnicas y talleres de enseñanza.</p>
+    </div>
+  </div>
+
   <footer>
     <p><strong>EduTec JHF</strong> — Impulsando la educación técnica y la electrónica aplicada.</p>
     <p style="font-size: 0.8rem; margin-top: 5px;">Desarrollado por Jordán José, Técnico Superior en Electrónica.</p>
   </footer>
+
+  <!-- CONTADORES Y MODAL -->
+  <script>
+    function abrirModal() { document.getElementById('modalAcerca').style.display = 'flex'; }
+    function cerrarModal() { document.getElementById('modalAcerca').style.display = 'none'; }
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalAcerca');
+      if (event.target === modal) { cerrarModal(); }
+    }
+
+    const NAMESPACE = "edutec-jhf-blocks";
+
+    fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/visitas/up`)
+      .then(res => res.json())
+      .then(data => { document.getElementById('contador-visitas').innerText = data.count || "1"; })
+      .catch(() => { document.getElementById('contador-visitas').innerText = "Disponible"; });
+
+    fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/descargas`)
+      .then(res => res.json())
+      .then(data => { document.getElementById('contador-descargas').innerText = data.count || "0"; })
+      .catch(() => { document.getElementById('contador-descargas').innerText = "0"; });
+
+    function registrarDescarga() {
+      fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/descargas/up`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.count) { document.getElementById('contador-descargas').innerText = data.count; }
+        });
+    }
+  </script>
 
 </body>
 </html>
