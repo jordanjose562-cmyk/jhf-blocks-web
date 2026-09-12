@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JHF Blocks - EduTec JHF</title>
+  <title>JHF Blocks - Programacion por bloques para robotica educativa | EduTec JHF</title>
+  <meta name="description" content="Entorno de programacion por bloques para Arduino, pensado para escuelas tecnicas. Gratis, en castellano y funciona sin internet.">
+
+  <!-- Asi se ve cuando alguien comparte el enlace por WhatsApp o redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JHF Blocks - Programacion por bloques para robotica educativa">
+  <meta property="og:description" content="Programa tu robot Arduino arrastrando bloques. Gratis, en castellano y sin necesidad de internet. Para escuelas tecnicas y talleres.">
+  <meta property="og:image" content="https://jordanjose562-cmyk.github.io/jhf-blocks-web/pantalla-inicio.png">
+  <meta property="og:url" content="https://jordanjose562-cmyk.github.io/jhf-blocks-web/">
+  <meta property="og:site_name" content="EduTec JHF">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="logo.png" type="image/png">
   
   <!-- FontAwesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -191,6 +203,45 @@
       margin-right: 6px;
     }
 
+    .peso-archivo {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 1px;
+    }
+
+    .btn-download {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .btn-download > span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .aviso-defender {
+      max-width: 720px;
+      margin: 22px auto 0 auto;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .aviso-defender strong { font-weight: 700; }
+
+    .aviso-defender i {
+      margin-right: 7px;
+      opacity: 0.9;
+    }
+
     /* SECCION CAPTURAS CON LAS IMÁGENES EXACTAS DEL REPOSITORIO */
     .section-title {
       text-align: center;
@@ -230,7 +281,10 @@
     .gallery-item img {
       width: 100%;
       height: 220px;
-      object-fit: cover;
+      /* contain y no cover: son capturas de pantalla, si se recortan
+         se pierde justo lo que se quiere mostrar */
+      object-fit: contain;
+      background: var(--light);
       display: block;
       border-bottom: 1px solid var(--border);
     }
@@ -613,20 +667,33 @@
         <!-- Botón Instalador 64-bits v1.8.4 -->
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.8.4.exe" 
            class="btn-download btn-installer-64 download-link" id="installer64Btn" download>
-          <i class="fab fa-windows"></i> Windows 64-bits (v1.8.4)
+          <span><i class="fab fa-windows"></i> Windows 64-bits (v1.8.4)</span>
+          <span class="peso-archivo" id="peso64">Instalador completo</span>
         </a>
 
         <!-- Botón Instalador Win7 32-bits v1.8.4 -->
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-Win7-32bits-1.8.4.exe" 
            class="btn-download btn-installer-32 download-link" id="installer32Btn" download>
-          <i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.8.4)
+          <span><i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.8.4)</span>
+          <span class="peso-archivo" id="peso32">Para computadoras viejas</span>
         </a>
 
         <!-- Botón APK Android -->
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks.apk" 
            class="btn-download btn-android download-link" id="androidBtn" download>
-          <i class="fab fa-android"></i> Descargar APK (Android)
+          <span><i class="fab fa-android"></i> Descargar APK (Android)</span>
+          <span class="peso-archivo" id="pesoApk">Celular y tablet</span>
         </a>
+      </div>
+
+      <!-- AVISO DE WINDOWS: pasa siempre y conviene contarlo antes -->
+      <div class="aviso-defender">
+        <i class="fas fa-shield-halved"></i>
+        <strong>Al abrir el instalador, Windows va a mostrar una pantalla azul</strong>
+        que dice "Windows protegió su PC". Es normal: pasa con todos los programas
+        que no pagan un certificado de firma digital. Tocá
+        <strong>Más información</strong> y después <strong>Ejecutar de todas formas</strong>.
+        El programa se instala sin pedir permisos de administrador.
       </div>
 
       <!-- METRICAS DE VISITAS Y DESCARGAS REALES -->
@@ -851,29 +918,72 @@
 
   <!-- JAVASCRIPT DE CONTADORES REALES Y MODAL -->
   <script>
-    // CONTADORES LOCALES REALES
-    
-    // 1. Contador de Visitas
+    // CONTADOR DE VISITAS
+    // Guardado en el navegador de cada visitante: cuenta cuantas veces
+    // volvio esa persona, no cuanta gente entro al sitio.
     let visits = parseInt(localStorage.getItem('jhf_visits') || '0');
     visits += 1;
     localStorage.setItem('jhf_visits', visits);
     document.getElementById('visitsCount').innerText = visits;
 
-    // 2. Contador de Descargas
-    let downloads = parseInt(localStorage.getItem('jhf_downloads') || '0');
-    document.getElementById('downloadsCount').innerText = downloads;
+    // DATOS REALES DE LOS ARCHIVOS, DIRECTO DE GITHUB
+    //
+    // Resuelve tres cosas de una:
+    //   - los enlaces siempre apuntan a la ultima version publicada, aunque
+    //     cambie el numero del release
+    //   - muestra cuanto pesa cada archivo
+    //   - muestra las descargas de verdad, no las de cada visitante
+    //
+    // Si GitHub no contesta, quedan los enlaces que estan escritos en el HTML.
 
-    function registerDownload() {
-      downloads += 1;
-      localStorage.setItem('jhf_downloads', downloads);
-      document.getElementById('downloadsCount').innerText = downloads;
+    const REPOSITORIO = 'jordanjose562-cmyk/jhf-blocks-web';
+
+    function enMegas(bytes) {
+      if (bytes >= 1024 * 1024 * 1024) {
+        return (bytes / 1024 / 1024 / 1024).toFixed(1).replace('.', ',') + ' GB';
+      }
+      return Math.round(bytes / 1024 / 1024) + ' MB';
     }
 
-    // Escuchar evento click en todos los botones de descarga válidos
-    const downloadButtons = document.querySelectorAll('.download-link');
-    downloadButtons.forEach(btn => {
-      btn.addEventListener('click', registerDownload);
-    });
+    // Reconoce cada archivo por su nombre, sin depender del numero de version
+    function cualBoton(nombre) {
+      const n = nombre.toLowerCase();
+      if (n.endsWith('.apk')) return { boton: 'androidBtn', peso: 'pesoApk', suelto: 'Celular y tablet' };
+      if (n.includes('32bit') || n.includes('win7')) return { boton: 'installer32Btn', peso: 'peso32', suelto: 'Para computadoras viejas' };
+      if (n.endsWith('.exe')) return { boton: 'installer64Btn', peso: 'peso64', suelto: 'Instalador completo' };
+      return null;
+    }
+
+    async function traerDatosDeGitHub() {
+      try {
+        const respuesta = await fetch('https://api.github.com/repos/' + REPOSITORIO + '/releases/latest');
+        if (!respuesta.ok) return;
+
+        const version = await respuesta.json();
+        let totalDescargas = 0;
+
+        for (const archivo of version.assets || []) {
+          totalDescargas += archivo.download_count || 0;
+
+          const destino = cualBoton(archivo.name);
+          if (!destino) continue;
+
+          const boton = document.getElementById(destino.boton);
+          const peso = document.getElementById(destino.peso);
+
+          if (boton) boton.href = archivo.browser_download_url;
+          if (peso) peso.textContent = destino.suelto + ' \u00b7 ' + enMegas(archivo.size);
+        }
+
+        if (totalDescargas > 0) {
+          document.getElementById('downloadsCount').innerText = totalDescargas;
+        }
+      } catch (error) {
+        // Sin internet o con GitHub caido, la pagina anda igual con lo que ya esta
+      }
+    }
+
+    traerDatosDeGitHub();
 
     // LÓGICA DEL MODAL "ACERCA DE"
     const modal = document.getElementById('aboutModal');
