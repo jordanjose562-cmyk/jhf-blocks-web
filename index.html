@@ -569,6 +569,114 @@
       line-height: 1.5;
     }
 
+    /* SECCION SERVICIOS Y CONTACTO */
+    .servicios-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #0d6efd 0%, #0a47a1 100%);
+      color: var(--white);
+    }
+
+    .servicios-section .section-title h2 { color: var(--white); }
+    .servicios-section .section-title p { color: rgba(255,255,255,0.85); }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+
+    .servicio-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 26px 24px;
+    }
+
+    .servicio-box i {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: block;
+      opacity: 0.95;
+    }
+
+    .servicio-box h4 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .servicio-box p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    .contacto-caja {
+      background: var(--white);
+      color: var(--dark);
+      border-radius: 12px;
+      padding: 32px 30px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .contacto-caja h3 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .contacto-caja > p {
+      color: #495057;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .btn-contacto {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-contacto:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(13, 110, 253, 0.4);
+    }
+
+    .contacto-correo {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+
+    .contacto-correo a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contacto-zona {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--secondary);
+    }
+
+    .contacto-zona i {
+      color: var(--primary);
+      margin-right: 6px;
+    }
+
     /* FOOTER */
     footer {
       background-color: var(--dark);
@@ -651,6 +759,7 @@
           <li><a href="#capturas">Capturas</a></li>
           <li><a href="#desafios">Desafíos</a></li>
           <li><a href="#quienes-somos">Sobre Nosotros</a></li>
+          <li><a href="#servicios">Capacitaciones</a></li>
           <li><button class="btn-about" id="openModalBtn"><i class="fas fa-info-circle"></i> Acerca de</button></li>
         </ul>
       </nav>
@@ -886,11 +995,92 @@
     </div>
   </section>
 
+  <!-- SECCIÓN SERVICIOS Y CONTACTO INSTITUCIONAL -->
+  <section id="servicios" class="servicios-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Capacitaciones y Proyectos Institucionales</h2>
+        <p>El software es libre y gratuito. Acompañamos su implementación en el aula</p>
+      </div>
+
+      <div class="servicios-grid">
+        <div class="servicio-box">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h4>Capacitación docente</h4>
+          <p>
+            Formación en servicio, jornadas institucionales y talleres sobre robótica
+            educativa con JHF Blocks. Trabajamos la herramienta junto con la secuencia
+            didáctica: qué enseñar, en qué orden y cómo evaluarlo.
+          </p>
+        </div>
+
+        <div class="servicio-box">
+          <i class="fas fa-robot"></i>
+          <h4>Kits de robótica</h4>
+          <p>
+            Robots para competencia y aula, con piezas impresas en 3D y corte láser
+            de fabricación propia. Seguidor de línea, laberinto, sumo, araña y bípedo,
+            armados o para armar, con su guía de montaje.
+          </p>
+        </div>
+
+        <div class="servicio-box">
+          <i class="fas fa-file-signature"></i>
+          <h4>Proyectos y Crédito Fiscal</h4>
+          <p>
+            Acompañamiento en la formulación y ejecución de proyectos de equipamiento
+            para escuelas técnicas: Crédito Fiscal INET, programas municipales y
+            provinciales, y armado de espacios tipo Fab Lab.
+          </p>
+        </div>
+
+        <div class="servicio-box">
+          <i class="fas fa-book-open"></i>
+          <h4>Material didáctico</h4>
+          <p>
+            Guías de laboratorio, manuales de electrónica aplicada y secuencias
+            didácticas para Educación Técnico Profesional, adaptadas al diseño
+            curricular de la provincia de Buenos Aires.
+          </p>
+        </div>
+      </div>
+
+      <div class="contacto-caja">
+        <h3>¿Querés implementarlo en tu escuela?</h3>
+        <p>
+          Escribinos contando qué necesitás: una capacitación, kits para el taller,
+          o ayuda para armar un proyecto de equipamiento. Respondemos todas las
+          consultas de instituciones educativas.
+        </p>
+
+        <a href="mailto:formaciondocentesteam@gmail.com?subject=Consulta%20desde%20la%20web%20de%20JHF%20Blocks&amp;body=Hola%2C%20les%20escribo%20desde%20la%20web%20de%20JHF%20Blocks.%0A%0AInstituci%C3%B3n%3A%20%0ALocalidad%3A%20%0AMe%20interesa%3A%20%0A%0A"
+           class="btn-contacto">
+          <i class="fas fa-envelope"></i> Escribinos
+        </a>
+
+        <p class="contacto-correo">
+          O directamente a <a href="mailto:formaciondocentesteam@gmail.com">formaciondocentesteam@gmail.com</a>
+        </p>
+
+        <p class="contacto-zona">
+          <i class="fas fa-location-dot"></i>
+          Pilar, Provincia de Buenos Aires. Trabajamos de forma presencial en zona
+          norte del conurbano y a distancia en todo el país.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; 2026 JHF Blocks - EduTec JHF. Todos los derechos reservados.</p>
       <p>Desarrollado por Prof. Jordán José | Registro DNDA Expediente N° EX-2026-88770799--APN-DNDA#MJ</p>
+      <p style="margin-top: 10px;">
+        <a href="mailto:formaciondocentesteam@gmail.com" style="color: var(--white); opacity: 0.9;">
+          <i class="fas fa-envelope"></i> formaciondocentesteam@gmail.com
+        </a>
+      </p>
     </div>
   </footer>
 
