@@ -159,31 +159,19 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    .btn-installer {
+    .btn-installer-64 {
       background-color: var(--success);
       color: var(--white);
     }
 
-    .btn-patch {
-      background-color: var(--white);
-      color: var(--primary);
+    .btn-installer-32 {
+      background-color: #0dcaf0;
+      color: #000;
     }
 
     .btn-android {
       background-color: #3ddc84;
       color: #000;
-    }
-
-    .btn-ios {
-      background-color: #6c757d;
-      color: var(--white);
-      cursor: not-allowed;
-      opacity: 0.8;
-    }
-
-    .btn-ios:hover {
-      transform: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .metrics-bar {
@@ -505,27 +493,22 @@
       <p>Diseñado especialmente para escuelas técnicas, talleres de electrónica y proyectos de robótica con Arduino.</p>
 
       <div class="downloads-container">
-        <!-- Botón Instalador Completo v1.1.0 64-bit -->
-        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.1.0.exe" 
-           class="btn-download btn-installer download-link" id="installerBtn" download>
-          <i class="fab fa-windows"></i> Instalador v1.1.0 (64-bit)
+        <!-- Botón Instalador 64-bits v1.8.4 -->
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.8.4.exe" 
+           class="btn-download btn-installer-64 download-link" id="installer64Btn" download>
+          <i class="fab fa-windows"></i> Windows 64-bits (v1.8.4)
         </a>
 
-        <!-- Botón Parche de Actualización v1.7.0 64-bit -->
-        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Actualizacion-1.7.0.zip" 
-           class="btn-download btn-patch download-link" id="patchBtn" download>
-          <i class="fas fa-sync-alt"></i> Actualización 1.7.0 (64-bit)
+        <!-- Botón Instalador Win7 32-bits v1.8.4 -->
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-Win7-32bits-1.8.4.exe" 
+           class="btn-download btn-installer-32 download-link" id="installer32Btn" download>
+          <i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.8.4)
         </a>
 
         <!-- Botón APK Android -->
-        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF.blocks.apk" 
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks.apk" 
            class="btn-download btn-android download-link" id="androidBtn" download>
           <i class="fab fa-android"></i> Descargar APK (Android)
-        </a>
-
-        <!-- Botón iOS (Próximamente) -->
-        <a href="javascript:void(0);" class="btn-download btn-ios" title="Próximamente disponible para iOS">
-          <i class="fab fa-apple"></i> iOS (Próximamente)
         </a>
       </div>
 
@@ -540,27 +523,45 @@
   <!-- GALERÍA DE CAPTURAS CON NOMBRES DE ARCHIVOS DEL REPOSITORIO -->
   <section class="container" id="capturas">
     <div class="section-title">
-      <h2>Módulos del Software</h2>
+      <h2>Módulos y Ejemplos del Software</h2>
       <p>Conocé la interfaz del programa en acción</p>
     </div>
 
     <div class="gallery-grid">
-      <!-- Imagen 1: captura-sensores.png -->
+      <!-- Imagen 1: pantalla-inicio.png -->
+      <div class="gallery-item">
+        <img src="pantalla-inicio.png" alt="Pantalla Principal - JHF Blocks">
+        <div class="gallery-caption">Pantalla Principal del Entorno JHF Blocks</div>
+      </div>
+
+      <!-- Imagen 2: captura-sensores.png -->
       <div class="gallery-item">
         <img src="captura-sensores.png" alt="Módulo de Sensores - JHF Blocks">
         <div class="gallery-caption">Módulo de Lectura e Integración de Sensores</div>
       </div>
 
-      <!-- Imagen 2: captura-motores.png -->
+      <!-- Imagen 3: captura-motores.png -->
       <div class="gallery-item">
         <img src="captura-motores.png" alt="Control de Motores - JHF Blocks">
         <div class="gallery-caption">Control y Programación de Motores y Salidas</div>
       </div>
 
-      <!-- Imagen 3: captura-pantallas.png -->
+      <!-- Imagen 4: captura-pantallas.png -->
       <div class="gallery-item">
         <img src="captura-pantallas.png" alt="Pantallas y Display - JHF Blocks">
         <div class="gallery-caption">Manejo de Pantallas LCD, Displays y Salidas Visuales</div>
+      </div>
+
+      <!-- Imagen 5: ejemplos1.png -->
+      <div class="gallery-item">
+        <img src="ejemplos1.png" alt="Ejemplos Prácticos 1 - JHF Blocks">
+        <div class="gallery-caption">Lógica de Bloques y Guías de Proyectos (Parte 1)</div>
+      </div>
+
+      <!-- Imagen 6: ejemplos2.png -->
+      <div class="gallery-item">
+        <img src="ejemplos2.png" alt="Ejemplos Prácticos 2 - JHF Blocks">
+        <div class="gallery-caption">Ejemplos Avanzados de Código y Electrónica (Parte 2)</div>
       </div>
     </div>
   </section>
@@ -669,8 +670,8 @@
         <h3>Acerca de JHF Blocks</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Versión del Software:</strong> 1.7.0 (Installer Base v1.1.0 - 64 bit)</p>
-        <p><strong>Versión Mobile:</strong> Android (.APK) / iOS (En desarrollo)</p>
+        <p><strong>Versión del Software:</strong> v1.8.4 (Windows 64-bit / Windows 7 32-bit)</p>
+        <p><strong>Versión Mobile:</strong> Android (.APK)</p>
         <p><strong>Autor y Creador:</strong> Prof. Jordán José (Técnico Superior en Electrónica)</p>
         <p><strong>Colaboradores:</strong> Germán Hormachea &amp; Christopher Farfán</p>
         <p><strong>Licencia:</strong> Software Educativo Libre para escuelas técnicas e instituciones públicas.</p>
