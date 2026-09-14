@@ -281,8 +281,6 @@
     .gallery-item img {
       width: 100%;
       height: 220px;
-      /* contain y no cover: son capturas de pantalla, si se recortan
-         se pierde justo lo que se quiere mostrar */
       object-fit: contain;
       background: var(--light);
       display: block;
@@ -773,17 +771,17 @@
       <p>Diseñado especialmente para escuelas técnicas, talleres de electrónica y proyectos de robótica con Arduino.</p>
 
       <div class="downloads-container">
-        <!-- Botón Instalador 64-bits v1.8.4 -->
-        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.8.4.exe" 
+        <!-- Botón Instalador 64-bits v1.9.0 -->
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.9.0.exe" 
            class="btn-download btn-installer-64 download-link" id="installer64Btn" download>
-          <span><i class="fab fa-windows"></i> Windows 64-bits (v1.8.4)</span>
+          <span><i class="fab fa-windows"></i> Windows 64-bits (v1.9.0)</span>
           <span class="peso-archivo" id="peso64">Instalador completo</span>
         </a>
 
-        <!-- Botón Instalador Win7 32-bits v1.8.4 -->
-        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-Win7-32bits-1.8.4.exe" 
+        <!-- Botón Instalador Win7 32-bits v1.9.0 -->
+        <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-Win7-32bits-1.9.0.exe" 
            class="btn-download btn-installer-32 download-link" id="installer32Btn" download>
-          <span><i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.8.4)</span>
+          <span><i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.9.0)</span>
           <span class="peso-archivo" id="peso32">Para computadoras viejas</span>
         </a>
 
@@ -795,7 +793,7 @@
         </a>
       </div>
 
-      <!-- AVISO DE WINDOWS: pasa siempre y conviene contarlo antes -->
+      <!-- AVISO DE WINDOWS -->
       <div class="aviso-defender">
         <i class="fas fa-shield-halved"></i>
         <strong>Al abrir el instalador, Windows va a mostrar una pantalla azul</strong>
@@ -821,37 +819,31 @@
     </div>
 
     <div class="gallery-grid">
-      <!-- Imagen 1: pantalla-inicio.png -->
       <div class="gallery-item">
         <img src="pantalla-inicio.png" alt="Pantalla Principal - JHF Blocks">
         <div class="gallery-caption">Pantalla Principal del Entorno JHF Blocks</div>
       </div>
 
-      <!-- Imagen 2: captura-sensores.png -->
       <div class="gallery-item">
         <img src="captura-sensores.png" alt="Módulo de Sensores - JHF Blocks">
         <div class="gallery-caption">Módulo de Lectura e Integración de Sensores</div>
       </div>
 
-      <!-- Imagen 3: captura-motores.png -->
       <div class="gallery-item">
         <img src="captura-motores.png" alt="Control de Motores - JHF Blocks">
         <div class="gallery-caption">Control y Programación de Motores y Salidas</div>
       </div>
 
-      <!-- Imagen 4: captura-pantallas.png -->
       <div class="gallery-item">
         <img src="captura-pantallas.png" alt="Pantallas y Display - JHF Blocks">
         <div class="gallery-caption">Manejo de Pantallas LCD, Displays y Salidas Visuales</div>
       </div>
 
-      <!-- Imagen 5: ejemplos1.png -->
       <div class="gallery-item">
         <img src="ejemplos1.png" alt="Ejemplos Prácticos 1 - JHF Blocks">
         <div class="gallery-caption">Lógica de Bloques y Guías de Proyectos (Parte 1)</div>
       </div>
 
-      <!-- Imagen 6: ejemplos2.png -->
       <div class="gallery-item">
         <img src="ejemplos2.png" alt="Ejemplos Prácticos 2 - JHF Blocks">
         <div class="gallery-caption">Ejemplos Avanzados de Código y Electrónica (Parte 2)</div>
@@ -897,7 +889,6 @@
         </div>
       </div>
 
-      <!-- El juego se carga recién cuando lo piden, para no demorar la página -->
       <div class="juego-caja" id="juegoCaja">
         <div class="juego-tapa" id="juegoTapa">
           <i class="fas fa-gamepad"></i>
@@ -916,7 +907,6 @@
       </div>
 
       <div class="quienes-somos-grid">
-        <!-- Columna Principal: Misión -->
         <div class="card-about main-card">
           <div class="icon-header">
             <i class="fas fa-rocket"></i>
@@ -930,7 +920,6 @@
           </p>
         </div>
 
-        <!-- Columna Creador y Desarrollador Principal -->
         <div class="card-about author-card">
           <div class="icon-header">
             <i class="fas fa-user-graduate"></i>
@@ -944,12 +933,9 @@
         </div>
       </div>
 
-      <!-- SECCIÓN EQUIPO DE COLABORADORES -->
       <div class="team-section">
         <h3 class="team-title"><i class="fas fa-users"></i> Equipo de Colaboradores</h3>
         <div class="team-grid">
-          
-          <!-- Colaborador 1 -->
           <div class="team-card">
             <div class="team-icon">
               <i class="fas fa-microchip"></i>
@@ -959,7 +945,6 @@
             <p>Colaborador en desarrollo técnico, pruebas de hardware y optimización de plataformas de electrónica aplicada.</p>
           </div>
 
-          <!-- Colaborador 2 -->
           <div class="team-card">
             <div class="team-icon">
               <i class="fas fa-chalkboard-teacher"></i>
@@ -968,11 +953,9 @@
             <span class="team-role">Licenciado en Educación &amp; Técnico Electromecánico</span>
             <p>Colaborador en la articulación pedagógica, diseño curricular técnico y estrategias didácticas para el aula.</p>
           </div>
-
         </div>
       </div>
 
-      <!-- PILARES -->
       <div class="pilares-grid">
         <div class="pilar-box">
           <i class="fas fa-cubes"></i>
@@ -1092,123 +1075,11 @@
         <h3>Acerca de JHF Blocks</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Versión del Software:</strong> v1.8.4 (Windows 64-bit / Windows 7 32-bit)</p>
-        <p><strong>Versión Mobile:</strong> Android (.APK)</p>
-        <p><strong>Autor y Creador:</strong> Prof. Jordán José (Técnico Superior en Electrónica)</p>
-        <p><strong>Colaboradores:</strong> Germán Hormachea &amp; Christopher Farfán</p>
-        <p><strong>Licencia:</strong> Software Educativo Libre para escuelas técnicas e instituciones públicas.</p>
-        <p><strong>Tecnologías:</strong> C#, Electron, Blockly, Node.js, Capacitor &amp; arduino-cli.</p>
-        <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border);">
-        <p style="font-size: 0.85rem; color: var(--secondary);">
-          Propiedad Intelectual registrada ante la Dirección Nacional del Derecho de Autor (DNDA) de la República Argentina.
-        </p>
+        <p><strong>Versión del Software:</strong> v1.9.0 (Windows 64-bit / Windows 7 32-bit)</p>
+        <p>Entorno de programación visual para robótica educativa y automatización.</p>
       </div>
     </div>
   </div>
-
-  <!-- JAVASCRIPT DE CONTADORES REALES Y MODAL -->
-  <script>
-    // CONTADOR DE VISITAS
-    // Guardado en el navegador de cada visitante: cuenta cuantas veces
-    // volvio esa persona, no cuanta gente entro al sitio.
-    let visits = parseInt(localStorage.getItem('jhf_visits') || '0');
-    visits += 1;
-    localStorage.setItem('jhf_visits', visits);
-    document.getElementById('visitsCount').innerText = visits;
-
-    // DATOS REALES DE LOS ARCHIVOS, DIRECTO DE GITHUB
-    //
-    // Resuelve tres cosas de una:
-    //   - los enlaces siempre apuntan a la ultima version publicada, aunque
-    //     cambie el numero del release
-    //   - muestra cuanto pesa cada archivo
-    //   - muestra las descargas de verdad, no las de cada visitante
-    //
-    // Si GitHub no contesta, quedan los enlaces que estan escritos en el HTML.
-
-    const REPOSITORIO = 'jordanjose562-cmyk/jhf-blocks-web';
-
-    function enMegas(bytes) {
-      if (bytes >= 1024 * 1024 * 1024) {
-        return (bytes / 1024 / 1024 / 1024).toFixed(1).replace('.', ',') + ' GB';
-      }
-      return Math.round(bytes / 1024 / 1024) + ' MB';
-    }
-
-    // Reconoce cada archivo por su nombre, sin depender del numero de version
-    function cualBoton(nombre) {
-      const n = nombre.toLowerCase();
-      if (n.endsWith('.apk')) return { boton: 'androidBtn', peso: 'pesoApk', suelto: 'Celular y tablet' };
-      if (n.includes('32bit') || n.includes('win7')) return { boton: 'installer32Btn', peso: 'peso32', suelto: 'Para computadoras viejas' };
-      if (n.endsWith('.exe')) return { boton: 'installer64Btn', peso: 'peso64', suelto: 'Instalador completo' };
-      return null;
-    }
-
-    async function traerDatosDeGitHub() {
-      try {
-        const respuesta = await fetch('https://api.github.com/repos/' + REPOSITORIO + '/releases/latest');
-        if (!respuesta.ok) return;
-
-        const version = await respuesta.json();
-        let totalDescargas = 0;
-
-        for (const archivo of version.assets || []) {
-          totalDescargas += archivo.download_count || 0;
-
-          const destino = cualBoton(archivo.name);
-          if (!destino) continue;
-
-          const boton = document.getElementById(destino.boton);
-          const peso = document.getElementById(destino.peso);
-
-          if (boton) boton.href = archivo.browser_download_url;
-          if (peso) peso.textContent = destino.suelto + ' \u00b7 ' + enMegas(archivo.size);
-        }
-
-        if (totalDescargas > 0) {
-          document.getElementById('downloadsCount').innerText = totalDescargas;
-        }
-      } catch (error) {
-        // Sin internet o con GitHub caido, la pagina anda igual con lo que ya esta
-      }
-    }
-
-    traerDatosDeGitHub();
-
-    // LÓGICA DEL MODAL "ACERCA DE"
-    const modal = document.getElementById('aboutModal');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-
-    openBtn.addEventListener('click', () => modal.classList.add('active'));
-    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
-
-    // CARGA DEL JUEGO DE DESAFÍOS
-    // El juego pesa un mega y medio: se carga recién cuando lo piden,
-    // así la página principal abre rápido igual
-    const cargarJuegoBtn = document.getElementById('cargarJuegoBtn');
-    if (cargarJuegoBtn) {
-      cargarJuegoBtn.addEventListener('click', () => {
-        const caja = document.getElementById('juegoCaja');
-        if (caja.querySelector('iframe')) return;
-
-        const marco = document.createElement('iframe');
-        marco.src = 'desafios/';
-        marco.title = 'JHF Desafios';
-        marco.loading = 'lazy';
-
-        caja.innerHTML = '';
-        caja.appendChild(marco);
-        caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
-  </script>
 
 </body>
 </html>
