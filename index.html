@@ -1081,5 +1081,57 @@
     </div>
   </div>
 
+  <!-- SCRIPT PARA INTERACTIVIDAD Y CONTADORES -->
+  <script>
+    // 1. Cargar el juego interactivo mediante iframe al hacer clic
+    const cargarJuegoBtn = document.getElementById('cargarJuegoBtn');
+    const juegoCaja = document.getElementById('juegoCaja');
+
+    if (cargarJuegoBtn && juegoCaja) {
+      cargarJuegoBtn.addEventListener('click', function () {
+        juegoCaja.innerHTML = '<iframe src="desafios/" title="Desafíos de Pensamiento Computacional" allowfullscreen></iframe>';
+      });
+    }
+
+    // 2. Control del modal "Acerca de"
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const aboutModal = document.getElementById('aboutModal');
+
+    if (openModalBtn && closeModalBtn && aboutModal) {
+      openModalBtn.addEventListener('click', function () {
+        aboutModal.classList.add('active');
+      });
+
+      closeModalBtn.addEventListener('click', function () {
+        aboutModal.classList.remove('active');
+      });
+
+      aboutModal.addEventListener('click', function (e) {
+        if (e.target === aboutModal) {
+          aboutModal.classList.remove('active');
+        }
+      });
+    }
+
+    // 3. Contadores de visitas y descargas (utilizando localStorage como demo local)
+    let visitas = localStorage.getItem('jhf_visitas') || 1045;
+    visitas = parseInt(visitas) + 1;
+    localStorage.setItem('jhf_visitas', visitas);
+    document.getElementById('visitsCount').textContent = visitas;
+
+    let descargas = localStorage.getItem('jhf_descargas') || 382;
+    document.getElementById('downloadsCount').textContent = descargas;
+
+    const downloadLinks = document.querySelectorAll('.download-link');
+    downloadLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        descargas = parseInt(descargas) + 1;
+        localStorage.setItem('jhf_descargas', descargas);
+        document.getElementById('downloadsCount').textContent = descargas;
+      });
+    });
+  </script>
+
 </body>
 </html>
