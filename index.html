@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JHF Blocks - Programacion por bloques para robotica educativa | EduTec JHF</title>
-  <meta name="description" content="Entorno de programacion por bloques para Arduino, pensado para escuelas tecnicas. Gratis, en castellano y funciona sin internet.">
+  <title>JHF Blocks - Programación por bloques para robótica educativa | EduTec JHF</title>
+  <meta name="description" content="Entorno de programación por bloques para Arduino, pensado para escuelas técnicas. Gratis, en castellano y funciona sin internet.">
 
-  <!-- Asi se ve cuando alguien comparte el enlace por WhatsApp o redes -->
+  <!-- Configuración para compartir enlace -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="JHF Blocks - Programacion por bloques para robotica educativa">
-  <meta property="og:description" content="Programa tu robot Arduino arrastrando bloques. Gratis, en castellano y sin necesidad de internet. Para escuelas tecnicas y talleres.">
+  <meta property="og:title" content="JHF Blocks - Programación por bloques para robótica educativa">
+  <meta property="og:description" content="Programá tu robot Arduino arrastrando bloques. Gratis, en castellano y sin necesidad de internet. Para escuelas técnicas y talleres.">
   <meta property="og:image" content="https://jordanjose562-cmyk.github.io/jhf-blocks-web/pantalla-inicio.png">
   <meta property="og:url" content="https://jordanjose562-cmyk.github.io/jhf-blocks-web/">
   <meta property="og:site_name" content="EduTec JHF">
@@ -239,7 +239,7 @@
       opacity: 0.9;
     }
 
-    /* SECCION CAPTURAS CON LAS IMÁGENES EXACTAS DEL REPOSITORIO */
+    /* SECCION GENERAL Y CAPTURAS */
     .section-title {
       text-align: center;
       margin: 50px 0 30px 0;
@@ -409,12 +409,102 @@
       }
     }
 
-    /* SECCION QUIENES SOMOS / EDUTEC JHF */
-    .quienes-somos-section {
+    /* SECCION ROBOTS Y STLS POR CATEGORIA DE JHF BLOCKS */
+    .robots-stl-section {
       padding: 60px 0;
       background-color: var(--white);
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    }
+
+    .categoria-bloques-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 35px 0 20px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      color: var(--primary);
+    }
+
+    .categoria-bloques-header i {
+      font-size: 1.4rem;
+    }
+
+    .stl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .stl-card {
+      background: var(--light);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stl-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .stl-preview {
+      height: 120px;
+      background: var(--white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      border: 1px solid var(--border);
+      color: var(--secondary);
+    }
+
+    .stl-preview i {
+      font-size: 3rem;
+    }
+
+    .stl-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .stl-card p {
+      font-size: 0.88rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .btn-stl {
+      background-color: var(--primary);
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+
+    .btn-stl:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* SECCION QUIENES SOMOS */
+    .quienes-somos-section {
+      padding: 60px 0;
+      background-color: var(--light);
+      border-top: 1px solid var(--border);
     }
 
     .quienes-somos-grid {
@@ -431,7 +521,7 @@
     }
 
     .card-about {
-      background: var(--light);
+      background: var(--white);
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
@@ -466,7 +556,6 @@
       margin-bottom: 15px;
     }
 
-    /* EQUIPO Y COLABORADORES */
     .team-section {
       margin-bottom: 40px;
     }
@@ -489,7 +578,7 @@
     }
 
     .team-card {
-      background: var(--light);
+      background: var(--white);
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
@@ -529,147 +618,6 @@
       color: var(--secondary);
       margin: 0;
       line-height: 1.4;
-    }
-
-    /* PILARES */
-    .pilares-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .pilar-box {
-      background: var(--light);
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      border-top: 4px solid var(--primary);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-    }
-
-    .pilar-box i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .pilar-box h4 {
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-    }
-
-    .pilar-box p {
-      font-size: 0.95rem;
-      color: #495057;
-      line-height: 1.5;
-    }
-
-    /* SECCION SERVICIOS Y CONTACTO */
-    .servicios-section {
-      padding: 60px 0;
-      background: linear-gradient(135deg, #0d6efd 0%, #0a47a1 100%);
-      color: var(--white);
-    }
-
-    .servicios-section .section-title h2 { color: var(--white); }
-    .servicios-section .section-title p { color: rgba(255,255,255,0.85); }
-
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-bottom: 40px;
-    }
-
-    .servicio-box {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 12px;
-      padding: 26px 24px;
-    }
-
-    .servicio-box i {
-      font-size: 1.8rem;
-      margin-bottom: 14px;
-      display: block;
-      opacity: 0.95;
-    }
-
-    .servicio-box h4 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .servicio-box p {
-      font-size: 0.93rem;
-      line-height: 1.6;
-      opacity: 0.92;
-    }
-
-    .contacto-caja {
-      background: var(--white);
-      color: var(--dark);
-      border-radius: 12px;
-      padding: 32px 30px;
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    }
-
-    .contacto-caja h3 {
-      color: var(--primary);
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-    }
-
-    .contacto-caja > p {
-      color: #495057;
-      font-size: 0.95rem;
-      margin-bottom: 22px;
-    }
-
-    .btn-contacto {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: var(--primary);
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-contacto:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(13, 110, 253, 0.4);
-    }
-
-    .contacto-correo {
-      margin-top: 16px;
-      font-size: 0.9rem;
-      color: var(--secondary);
-    }
-
-    .contacto-correo a {
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .contacto-zona {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 0.88rem;
-      color: var(--secondary);
-    }
-
-    .contacto-zona i {
-      color: var(--primary);
-      margin-right: 6px;
     }
 
     /* FOOTER */
@@ -753,8 +701,8 @@
           <li><a href="#descargas">Descargas</a></li>
           <li><a href="#capturas">Capturas</a></li>
           <li><a href="#desafios">Desafíos</a></li>
+          <li><a href="#robots-stl">Robots & STLs</a></li>
           <li><a href="#quienes-somos">Sobre Nosotros</a></li>
-          <li><a href="#servicios">Capacitaciones</a></li>
           <li><button class="btn-about" id="openModalBtn"><i class="fas fa-info-circle"></i> Acerca de</button></li>
         </ul>
       </nav>
@@ -772,21 +720,21 @@
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-1.9.0.exe" 
            class="btn-download btn-installer-64 download-link" id="installer64Btn" download>
           <span><i class="fab fa-windows"></i> Windows 64-bits (v1.9.0)</span>
-          <span class="peso-archivo" id="peso64">Sistemas de 64 bits</span>
+          <span class="peso-archivo">Sistemas de 64 bits</span>
         </a>
 
         <!-- Botón Instalador Win7 32-bits v1.9.0 -->
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks-Instalador-Win7-32bits-1.9.0.exe" 
            class="btn-download btn-installer-32 download-link" id="installer32Btn" download>
           <span><i class="fab fa-windows"></i> Windows 7 / 32-bits (v1.9.0)</span>
-          <span class="peso-archivo" id="peso32">Sistemas de 32 bits / Win7</span>
+          <span class="peso-archivo">Sistemas de 32 bits / Win7</span>
         </a>
 
         <!-- Botón APK Android -->
         <a href="https://github.com/jordanjose562-cmyk/jhf-blocks-web/releases/download/v1.5.2/JHF-Blocks.apk" 
            class="btn-download btn-android download-link" id="androidBtn" download>
           <span><i class="fab fa-android"></i> Descargar APK (Android)</span>
-          <span class="peso-archivo" id="pesoApk">Celulares y tablets</span>
+          <span class="peso-archivo">Celulares y tablets</span>
         </a>
       </div>
 
@@ -808,7 +756,7 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE CAPTURAS COMPLETA (6 IMÁGENES) -->
+  <!-- GALERÍA DE CAPTURAS -->
   <section class="container" id="capturas">
     <div class="section-title">
       <h2>Módulos y Ejemplos del Software</h2>
@@ -895,6 +843,102 @@
     </div>
   </section>
 
+  <!-- APARTADO DE ROBOTS Y ARCHIVOS STL ORGANIZADO POR CATEGORÍAS DE JHF BLOCKS -->
+  <section id="robots-stl" class="robots-stl-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Robots y Diseños 3D (STL)</h2>
+        <p>Descargá e imprimí las piezas 3D organizadas por cada categoría del entorno JHF Blocks</p>
+      </div>
+
+      <!-- CATEGORÍA 1: MOTORES & SALIDAS -->
+      <div class="categoria-bloques-header">
+        <i class="fas fa-cogs"></i>
+        <h3>Motores & Actuadores</h3>
+      </div>
+      <div class="stl-grid">
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-robot"></i></div>
+          <h4>Chasis Robot 2WD</h4>
+          <p>Base principal para motores DC de reductora amarilla y rueda loca.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-microchip"></i></div>
+          <h4>Soporte Microservo SG90</h4>
+          <p>Montaje universal para servomotores en chasis de robótica.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-dharmachakra"></i></div>
+          <h4>Rueda de Tracción 65mm</h4>
+          <p>Rueda impresa con acople directo para eje D de motor DC.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+      </div>
+
+      <!-- CATEGORÍA 2: SENSORES -->
+      <div class="categoria-bloques-header">
+        <i class="fas fa-wave-square"></i>
+        <h3>Sensores</h3>
+      </div>
+      <div class="stl-grid">
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-eye"></i></div>
+          <h4>Soporte Sensor Ultrasonido</h4>
+          <p>Soporte frontal para sensor HC-SR04 ajustable al chasis.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-route"></i></div>
+          <h4>Soporte Sensores TCRT5000</h4>
+          <p>Base inferior para 2 u 8 sensores seguidores de línea.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+      </div>
+
+      <!-- CATEGORÍA 3: PANTALLAS & DISPLAYS -->
+      <div class="categoria-bloques-header">
+        <i class="fas fa-tv"></i>
+        <h3>Pantallas & Visualización</h3>
+      </div>
+      <div class="stl-grid">
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-desktop"></i></div>
+          <h4>Marco para LCD 16x2 I2C</h4>
+          <p>Carcasa protectora para pantalla LCD de proyectos portátiles.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-border-all"></i></div>
+          <h4>Soporte Matriz LED 8x8</h4>
+          <p>Base de fijación para matriz MAX7219.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+      </div>
+
+      <!-- CATEGORÍA 4: ALIMENTACIÓN & ESTRUCTURA -->
+      <div class="categoria-bloques-header">
+        <i class="fas fa-battery-full"></i>
+        <h3>Estructura & Alimentación</h3>
+      </div>
+      <div class="stl-grid">
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-car-battery"></i></div>
+          <h4>Soporte Portapilas 18650</h4>
+          <p>Caja de encastre seguro para 2 baterías Li-Ion 18650.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+        <div class="stl-card">
+          <div class="stl-preview"><i class="fas fa-box"></i></div>
+          <h4>Carcasa Protectora Arduino UNO</h4>
+          <p>Caja protectora encastrable sin tornillos para placa Arduino.</p>
+          <a href="#" class="btn-stl download-link"><i class="fas fa-download"></i> Descargar STL</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECCIÓN QUIÉNES SOMOS / EDUTEC JHF -->
   <section id="quienes-somos" class="quienes-somos-section">
     <div class="container">
@@ -952,102 +996,6 @@
           </div>
         </div>
       </div>
-
-      <div class="pilares-grid">
-        <div class="pilar-box">
-          <i class="fas fa-cubes"></i>
-          <h4>Entornos Accesibles</h4>
-          <p>Desarrollo de herramientas de software portable y sin necesidad de internet (Offline-First) para garantizar la inclusión tecnológica en cualquier taller o aula.</p>
-        </div>
-
-        <div class="pilar-box">
-          <i class="fas fa-lightbulb"></i>
-          <h4>Pensamiento Computacional</h4>
-          <p>Estimulamos la resolución de problemas, la lógica de programación por bloques y el razonamiento secuencial mediante actividades guiadas y prácticas directas.</p>
-        </div>
-
-        <div class="pilar-box">
-          <i class="fas fa-tools"></i>
-          <h4>Electrónica Aplicada</h4>
-          <p>Elaboración de guías teóricas, esquemas de conexión y manuales prácticos de robótica (Arduino, sensores y actuadores) para potenciar la educación técnica provincial y nacional.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN SERVICIOS Y CONTACTO INSTITUCIONAL -->
-  <section id="servicios" class="servicios-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Capacitaciones y Proyectos Institucionales</h2>
-        <p>El software es libre y gratuito. Acompañamos su implementación en el aula</p>
-      </div>
-
-      <div class="servicios-grid">
-        <div class="servicio-box">
-          <i class="fas fa-chalkboard-teacher"></i>
-          <h4>Capacitación docente</h4>
-          <p>
-            Formación en servicio, jornadas institucionales y talleres sobre robótica
-            educativa con JHF Blocks. Trabajamos la herramienta junto con la secuencia
-            didáctica: qué enseñar, en qué orden y cómo evaluarlo.
-          </p>
-        </div>
-
-        <div class="servicio-box">
-          <i class="fas fa-robot"></i>
-          <h4>Kits de robótica</h4>
-          <p>
-            Robots para competencia y aula, con piezas impresas en 3D y corte láser
-            de fabricación propia. Seguidor de línea, laberinto, sumo, araña y bípedo,
-            armados o para armar, con su guía de montaje.
-          </p>
-        </div>
-
-        <div class="servicio-box">
-          <i class="fas fa-file-signature"></i>
-          <h4>Proyectos y Crédito Fiscal</h4>
-          <p>
-            Acompañamiento en la formulación y ejecución de proyectos de equipamiento
-            para escuelas técnicas: Crédito Fiscal INET, programas municipales y
-            provinciales, y armado de espacios tipo Fab Lab.
-          </p>
-        </div>
-
-        <div class="servicio-box">
-          <i class="fas fa-book-open"></i>
-          <h4>Material didáctico</h4>
-          <p>
-            Guías de laboratorio, manuales de electrónica aplicada y secuencias
-            didácticas para Educación Técnico Profesional, adaptadas al diseño
-            curricular de la provincia de Buenos Aires.
-          </p>
-        </div>
-      </div>
-
-      <div class="contacto-caja">
-        <h3>¿Querés implementarlo en tu escuela?</h3>
-        <p>
-          Escribinos contando qué necesitás: una capacitación, kits para el taller,
-          o ayuda para armar un proyecto de equipamiento. Respondemos todas las
-          consultas de instituciones educativas.
-        </p>
-
-        <a href="mailto:formaciondocentesteam@gmail.com?subject=Consulta%20desde%20la%20web%20de%20JHF%20Blocks&amp;body=Hola%2C%20les%20escribo%20desde%20la%20web%20de%20JHF%20Blocks.%0A%0AInstituci%C3%B3n%3A%20%0ALocalidad%3A%20%0AMe%20interesa%3A%20%0A%0A"
-           class="btn-contacto">
-          <i class="fas fa-envelope"></i> Escribinos
-        </a>
-
-        <p class="contacto-correo">
-          O directamente a <a href="mailto:formaciondocentesteam@gmail.com">formaciondocentesteam@gmail.com</a>
-        </p>
-
-        <p class="contacto-zona">
-          <i class="fas fa-location-dot"></i>
-          Pilar, Provincia de Buenos Aires. Trabajamos de forma presencial en zona
-          norte del conurbano y a distancia en todo el país.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -1104,13 +1052,11 @@
     }
 
     // 3. Contadores
-    // Visitas locales
     let visitas = localStorage.getItem('jhf_visitas') || 1045;
     visitas = parseInt(visitas) + 1;
     localStorage.setItem('jhf_visitas', visitas);
     document.getElementById('visitsCount').textContent = visitas;
 
-    // Obtener descargas REALES desde la API de GitHub Releases
     async function obtenerDescargasReales() {
       const downloadsElem = document.getElementById('downloadsCount');
       try {
@@ -1128,21 +1074,18 @@
           }
         });
 
-        // Si la API devuelve un valor real, actualiza el DOM
         if (totalDescargas > 0) {
           downloadsElem.textContent = totalDescargas;
         } else {
           downloadsElem.textContent = localStorage.getItem('jhf_descargas') || 382;
         }
       } catch (error) {
-        // En caso de limite de peticiones API de GitHub, usa el valor guardado
         downloadsElem.textContent = localStorage.getItem('jhf_descargas') || 382;
       }
     }
 
     obtenerDescargasReales();
 
-    // Incrementar en clic de descarga local
     const downloadLinks = document.querySelectorAll('.download-link');
     downloadLinks.forEach(link => {
       link.addEventListener('click', function () {
